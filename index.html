@@ -1,554 +1,656 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>IMMOLEAD - Agence de Marketing Digital</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Agence de Marketing Web" name="keywords">
-    <meta content="Agence de Creation Web" name="description">
-	<meta name="google-site-verification" content="DgvZ4kmLlp6TSPhCqfLn22z6tNYsT8PZFSzQtPktT1k" />
-
-    <!-- Favicon -->
-    <link href="img/logo.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-	
-
-	
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ADVIBE | Agence de marketing digital</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--red:#ff163d;--red-dim:#cc0f2e;--dark:#151515;--dark2:#1c1c1c;--dark3:#252525;--gray:#c0c0c0;--white:#fff;--border:#262626;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:#ffffff;font-weight:450;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.container{width:92%;max-width:1400px;margin:auto;}
+section{padding:140px 0;position:relative;}
+h1,h2,h3,.logo{font-family:'Bebas Neue',sans-serif;letter-spacing:1.5px;font-weight:400;will-change:transform;}
+.red{color:var(--red);text-shadow: 0 0 15px rgba(255, 22, 61, 0.25);}
+/* ─── NAVBAR ─── */nav{position:fixed;top:0;left:0;width:100%;background:rgba(10,10,10,.82);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);z-index:999;border-bottom:1px solid rgba(255,255,255,.06);transition:border-color .4s, background .4s;}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;height:90px;transition:height .4s;}
+.logo{font-size:36px;letter-spacing:4px;color:#fff;text-decoration:none;transition:transform .2s ease;display:flex;align-items:center;}
+.logo:hover{transform:scale(1.02);}
+.logo img{height:15px;width:auto;display:block;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:color .25s ease, letter-spacing .25s ease;}
+.nav-links a:hover{color:var(--red);letter-spacing:2px;}
+/* Hamburger */.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s cubic-bezier(0.25,1,0.5,1);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}.hamburger.open span:nth-child(2){opacity:0;}.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* Mobile Nav Drawer */.mobile-nav{display:none;position:fixed;top:90px;left:0;width:100%;background:#0a0a0a;border-bottom:1px solid var(--border);flex-direction:column;padding:24px 0;z-index:998;transform:translateY(-15px);opacity:0;pointer-events:none;transition:all .3s cubic-bezier(0.25,1,0.5,1);}
+.mobile-nav.open{display:flex;opacity:1;transform:translateY(0);pointer-events:all;}
+.mobile-nav a{padding:18px 28px;color:rgba(255,255,255,.9);text-decoration:none;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border);transition:color .2s,background .2s;}
+.mobile-nav a:last-child{border-bottom:none;}.mobile-nav a:hover{color:#fff;background:rgba(255,22,61,.12);}
+/* ─── BUTTONS WITH GLOW FX ─── */.btn{position:relative;background:var(--red);padding:18px 36px;color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;display:inline-block;border:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));overflow:hidden;transition:background .25s,transform .15s,box-shadow .25s;}
+.btn::before{content:'';position:absolute;top:var(--mouse-y,0);left:var(--mouse-x,0);width:150px;height:150px;background:radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);transform:translate(-50%,-50%);pointer-events:none;transition:opacity 0.2s;opacity:0;}
+.btn:hover::before{opacity:1;}
+.btn:hover{background:var(--red-dim);transform:translateY(-3px);box-shadow: 0 8px 30px rgba(255,22,61,0.5);}.btn:active{transform:translateY(0);}
+.btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.35);clip-path:none;border-radius:0;color:#fff;}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:#fff;box-shadow:none;}
+/* ─── HERO EXTENDED FULL WIDTH (LEFT TO RIGHT) ─── */.hero{min-height:100vh;display:flex;align-items:center;padding-top:90px;position:relative;overflow:hidden;}
+.hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.15);transition:opacity 1.6s ease-in-out, transform 5.5s ease-out;will-change:opacity, transform;}
+.slide.active{opacity:0.65;transform:scale(1.03);}
+/* Dark modern overlay protecting contrast across the full width */.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg, rgba(21,21,21,0.75) 0%, rgba(21,21,21,0.45) 40%, rgba(21,21,21,0.15) 100%), radial-gradient(circle at 70% 50%, transparent 35%, rgba(21,21,21,0.35) 100%);z-index:2;pointer-events:none;}
+.hero-lines{position:absolute;top:0;right:0;width:100%;height:100%;background-image:repeating-linear-gradient(  to right,  rgba(255,22,61,.03) 0,  rgba(255,22,61,.03) 1px,  transparent 1px,  transparent 60px);pointer-events:none;z-index:3;}
+.hero .container{position:relative;z-index:4;width:92%;}
+.hero small{color:#aaa;font-weight:700;letter-spacing:6px;font-size:11px;text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:32px;}
+.hero small::before{content:'';display:inline-block;width:40px;height:2px;background:var(--red);}
+.hero h1{font-size:clamp(72px,10vw,165px);line-height:.84;margin-bottom:36px;color:#fff;}
+.hero p{max-width:620px;color:#e8e8e8;line-height:1.9;font-size:17px;margin-bottom:44px;}
+.hero-buttons{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;}
+/* Down Scroll Indicator */.scroll-indicator{position:absolute;bottom:40px;left:4%;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:4;opacity:0.6;animation:pulseIndicator 2.5s infinite;}
+.scroll-line{width:2px;height:40px;background:linear-gradient(to bottom, var(--red), transparent);transform-origin:top;}
+@keyframes pulseIndicator{0%,100%{opacity:0.4;transform:translateY(0);}50%{opacity:0.8;transform:translateY(6px);}}
+/* ─── TICKER ─── */.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;padding:28px 0;background:#0d0d0d;position:relative;z-index:10;}
+.ticker-track{display:inline-flex;animation:slideTrack 26s linear infinite;}
+.ticker-track span{font-family:'Bebas Neue';font-size:32px;margin-right:72px;color:rgba(255,255,255,.98);letter-spacing:2px;}
+.ticker-track span::after{content:"◆";color:var(--red);margin-left:36px;font-size:14px;vertical-align:4px;text-shadow: 0 0 10px var(--red);}
+@keyframes slideTrack{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+/* ─── STATS ─── */.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:0;}
+.stat{background:var(--dark);padding:64px 40px;position:relative;overflow:hidden;}
+.stat::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red);transform:translateY(101%);transition:transform .4s cubic-bezier(0.25,1,0.5,1);}
+.stat:hover::before{transform:translateY(0);}
+.stat h3{font-size:clamp(52px,6vw,84px);line-height:1;margin-bottom:12px;color:#fff;}
+.stat p{color:#d8d8d8;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;}
+/* ─── SECTION HEADER ─── */.section-title{font-size:clamp(54px,7vw,100px);margin-bottom:76px;line-height:.9;color:#fff;}
+/* ─── SERVICES ─── */.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.service{background:var(--dark);padding:60px 45px;transition:background .35s ease;position:relative;overflow:hidden;}
+.service::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--red);transition:width .4s ease;}
+.service:hover{background:#202020;}.service:hover::after{width:100%;}
+.service-icon{font-size:36px;margin-bottom:28px;display:block;color:var(--red);text-shadow: 0 0 12px rgba(255,22,61,0.35);}
+.service h3{margin-bottom:18px;font-size:36px;color:#fff;letter-spacing:1px;}
+.service p{color:#f2f2f2;line-height:1.85;font-size:16px;}
+/* ─── RESULTS ─── */.results{background:#202020;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.result{display:flex;justify-content:space-between;align-items:center;padding:54px 0;border-bottom:1px solid var(--border);gap:24px;transition:transform .35s cubic-bezier(0.25,1,0.5,1);transform-origin:left;}
+.result:hover{transform:translateX(16px);}
+.result:last-child{border-bottom:none;}
+.result-label{font-size:13px;color:#d8d8d8;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+.result h3{font-family:'Bebas Neue';font-size:44px;letter-spacing:1.5px;color:#fff;}
+.result p{color:#efefef;font-size:16px;margin-top:8px;}
+.result .value{font-family:'Bebas Neue';font-size:clamp(58px,7vw,96px);color:var(--red);white-space:nowrap;letter-spacing:2px;text-shadow: 0 0 25px rgba(255,22,61,0.25);}
+/* ─── TEAM ─── */.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.member{position:relative;perspective:1000px;}
+.member-img{width:100%;aspect-ratio:3/4;background:#1a1a1a;overflow:hidden;position:relative;border:1px solid var(--border);transition:border-color .4s, box-shadow .4s, transform .4s cubic-bezier(0.25,1,0.5,1);will-change:transform;}
+.member-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.6) 0%,transparent 70%);z-index:2;}
+.member-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%) contrast(104%);transition:transform .6s cubic-bezier(0.25, 1, 0.5, 1), filter .6s ease;}
+.member:hover .member-img{border-color:var(--red);box-shadow: 0 12px 35px rgba(255,22,61,0.3);transform:translateY(-8px) rotateY(4deg);}
+.member:hover .member-img img{transform:scale(1.08);filter:grayscale(0%) contrast(100%);}
+.member-info{padding:22px 0 0;}
+.member h3{font-size:28px;color:#fff;letter-spacing:1px;}
+.member p{color:var(--red);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:6px;}
+/* ─── PROCESS ─── */.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.step{background:var(--dark);padding:60px 45px;position:relative;}
+.step-number{font-family:'Bebas Neue';font-size:110px;color:var(--red);line-height:1;opacity:.35;margin-bottom:-4px;text-shadow: 0 0 15px rgba(255,22,61,0.2);transition:opacity .3s, transform .3s;}
+.step:hover .step-number{opacity:0.6;transform:scale(1.05);}
+.step h3{font-size:38px;color:#fff;margin-bottom:16px;letter-spacing:1px;}
+.step p{color:#f2f2f2;line-height:1.85;font-size:16px;}
+/* ─── TESTIMONIALS ─── */.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.testimonial{border:1px solid var(--border);background:#202020;padding:48px;position:relative;transition:border-color .3s, transform .3s;position:relative;}
+.testimonial:hover{border-color:rgba(255,22,61,0.4);transform:translateY(-4px);}
+.testimonial::before{content:'';font-family:'Bebas Neue';font-size:110px;color:var(--red);line-height:1;display:block;opacity:.45;margin-bottom:-20px;}
+.testimonial p{line-height:1.9;color:#e5e5e5;margin-bottom:32px;font-size:16px;}
+.testimonial-author{display:flex;align-items:center;gap:16px;}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:19px;letter-spacing:1px;flex-shrink:0;box-shadow: 0 0 12px rgba(255,22,61,0.35);}
+.testimonial strong{font-size:16px;color:#fff;display:block;}
+.testimonial span{font-size:13px;color:#aaa;font-weight:500;}
+/* ─── FAQ ─── */.faq-item{border-bottom:1px solid var(--border);background:var(--dark);}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:32px 24px;cursor:pointer;background:none;border:none;color:#fff;width:100%;text-align:left;font-family:'DM Sans',sans-serif;font-size:17.5px;font-weight:700;gap:20px;transition:color .25s, background-color .25s;}
+.faq-question:hover{color:var(--red);background-color:rgba(255,255,255,0.01);}
+.faq-toggle{width:40px;height:40px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;color:#aaa;transition:all .35s cubic-bezier(0.25,1,0.5,1);line-height:1;}
+.faq-item.active .faq-toggle{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg);box-shadow: 0 0 15px rgba(255,22,61,0.4);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(0.25,1,0.5,1);color:#dedede;font-size:16px;line-height:1.9;background:rgba(0,0,0,0.12);}
+.faq-answer-inner{padding: 4px 24px 36px 24px;}
+/* ─── CTA ─── */.cta{background:var(--red);text-align:center;overflow:hidden;padding:150px 0;}
+.cta-inner{position:relative;z-index:1;}
+.cta h2{font-size:clamp(68px,9vw,140px);line-height:.88;margin-bottom:28px;text-shadow: 0 6px 30px rgba(0,0,0,0.2);}
+.cta p{font-size:19px;font-weight:500;opacity:.95;margin-bottom:48px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.8;}
+.btn-dark{background:#000;color:#fff;box-shadow: 0 4px 18px rgba(0,0,0,0.25);}
+.btn-dark:hover{background:#0d0d0d;box-shadow: 0 6px 30px rgba(0,0,0,0.4);}
+/* ─── CONTACT ─── */.contact{background:#202020;border-top:1px solid var(--border);}
+form{max-width:850px;margin:auto;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.input-wrap{display:flex;flex-direction:column;}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+input,textarea{width:100%;padding:22px 24px;background:#242424;border:1px solid #333;border-radius:0;color:#fff;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;outline:none;transition:border-color .25s,box-shadow .25s,background-color .25s;-webkit-appearance:none;}
+input:focus,textarea:focus{border-color:var(--red);background:#1e1e1e;box-shadow:0 0 0 4px rgba(255,22,61,.2);}
+input::placeholder,textarea::placeholder{color:#777;}
+textarea{height:190px;margin-top:28px;resize:none;}
+button[type=submit]{margin-top:32px;width:100%;font-size:14px;padding:22px;}
+/* ─── FOOTER ─── */footer{padding:80px 0;background:var(--dark);border-top:1px solid var(--border);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;}
+.footer-logo img{height:32px;width:auto;display:block;}
+.footer-links{display:flex;gap:36px;}
+.footer-links a{color:#d8d8d8;text-decoration:none;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:color .2s;}
+.footer-links a:hover{color:var(--red);}
+.footer-copy{color:#777;font-size:14px;}
+/* ─── SECTION TAGS ─── */.section-tag{display:inline-flex;align-items:center;gap:14px;color:var(--red);font-size:12px;font-weight:700;letter-spacing:5px;text-transform:uppercase;margin-bottom:28px;}
+.section-tag::before{content:'';display:inline-block;width:32px;height:2px;background:currentColor;}
+/* ─── RESPONSIVE SYSTEMS ─── */@media(max-width:1024px){.team-grid{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.services-grid{grid-template-columns:repeat(2,1fr);}.section-title{font-size:clamp(46px,6vw,76px);}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}
+section{padding:100px 0;}
+.nav-wrap{height:76px;}.mobile-nav{top:76px;}
+.hero{padding-top:76px;min-height:100vh;display:flex;align-items:center;}
+/* Protect text tracking on mobile full-width screen layouts */.hero .container{padding:40px 0;background:rgba(10,10,10,0.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:12px;padding:32px 20px;}
+.hero h1{font-size:clamp(58px,12vw,92px);line-height:0.9;margin-bottom:24px;}.hero p{font-size:16px;margin-bottom:36px;}
+.hero small{font-size:10px;letter-spacing:3px;margin-bottom:24px;line-height:1.4;flex-wrap:wrap;}
+.hero-slideshow{position:absolute;width:100%;height:100%;top:0;left:0;margin-top:0;}
+.slide.active{opacity:0.5;transform:scale(1.05);}
+.hero-overlay{background:linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.6) 50%, var(--dark) 100%);}
+.hero-lines{display:none;}.scroll-indicator{display:none;}
+.ticker-track span{font-size:26px;margin-right:48px;}
+/* FIXED MOBILE OVERLAP GRID STATE ERROR */.stats{grid-template-columns:repeat(2,1fr);display:grid;}.stat{padding:48px 24px;}.stat h3{font-size:48px;}
+.services-grid{grid-template-columns:1fr;background:none;border:none;gap:24px;}.service{border:1px solid var(--border);border-bottom:3px solid var(--border);padding:44px 36px;}.service:hover{border-bottom-color:var(--red);}.service:after{display:none;}
+.result{flex-direction:column;align-items:flex-start;gap:16px;padding:40px 0;}.result:hover{transform:none;}
+.result .value{font-size:68px;}
+.team-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
+.process-grid{grid-template-columns:1fr;background:none;border:none;gap:24px;}
+.step{border:1px solid var(--border);padding:44px 36px;}
+.testimonials{grid-template-columns:1fr;gap:24px;}.testimonial{padding:36px;}
+.form-grid{grid-template-columns:1fr;}
+textarea{margin-top:0;}
+.footer-inner{flex-direction:column;align-items:flex-start;gap:32px;}.footer-links{flex-wrap:wrap;gap:24px;}
+.cta h2{font-size:clamp(56px,12vw,100px);}}
+@media(max-width:480px){.container{width:90%;}.hero h1{font-size:clamp(48px,13vw,76px);}.hero-buttons{flex-direction:column;width:100%;gap:16px;}.hero-buttons .btn{text-align:center;width:100%;margin-top:0;}.stats{grid-template-columns:1fr;}.team-grid{grid-template-columns:1fr;}.nav-wrap{height:72px;}.mobile-nav{top:72px;}.section-title{font-size:clamp(40px,10vw,64px);}}
+</style>
+<style>
+@media (max-width:768px){
+  #pays .globe-layout{
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+  #globeCanvas{
+    width:300px !important;
+    height:300px !important;
+    max-width:100%;
+    margin:auto;
+    display:block;
+  }
+  #countryList{
+    width:100%;
+  }
+  .country-item{
+    width:100%;
+    box-sizing:border-box;
+  }
+  #pays .container{
+    padding:60px 20px !important;
+  }
+}
+</style>
 </head>
-
-<div>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-secondary ps-5 pe-0 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
-                
-            </div>
-            <div class="col-md-6 text-center text-lg-end">
-                <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
-                    <div class="me-3 pe-3 border-end py-2">
-                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>info@immolead.com</p>
-                    </div>
-                    <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>(+212) 664 21 18 09</p>
-                    </div>
-                </div>
-            </div>
+<body>
+<nav><div class="container nav-wrap">
+<a href="#" class="logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwvtqBRSirqbb3gL4y1pBEHkAqrxbMAcp1zh1hJ-LCemBz4HfcZ_om-9SdPRQcD49gb_f_uxJDDLmUisoX5ADDuzoIseLxVUPil8_DEflwT_ck4YYLjASCqO8lOuzTsx9kb59ZcUiFBMeUZFLykCiLV1r_CN5Px89XWUGGhuNGI0SKfD_2JiAecNAMYEY/s3972/advibe%20white%20png.png" alt="ADVIBE"></a>
+<div class="nav-links"><a href="#services">Services</a><a href="#pays">Présence</a><a href="#team">Équipe</a><a href="#process">Méthode</a><a href="#faq">FAQ</a></div>
+<a href="#contact" class="btn DynamicGlow" style="font-size:12px;padding:14px 28px;">Réserver un appel</a>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</div></nav>
+<nav class="mobile-nav" id="mobileNav"><a href="#services" class="mobile-link">Services</a><a href="#results" class="mobile-link">Réalisations</a><a href="#team" class="mobile-link">Équipe</a><a href="#process" class="mobile-link">Méthode</a><a href="#faq" class="mobile-link">FAQ</a><a href="#contact" class="mobile-link" style="color:var(--red);">Book A Call →</a></nav>
+<section class="hero">
+<div class="hero-slideshow">
+<div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&width=1600&auto=format&fit=crop');"></div>
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&width=1600&auto=format&fit=crop');"></div>
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&width=1600&auto=format&fit=crop');"></div>
+<div class="hero-overlay"></div>
+</div>
+<div class="hero-lines"></div>
+<div class="container">
+<small>OUVERT AUX MARQUES INTERNATIONALES — T3 2026</small>
+<h1>NOUS TRANSFORMONS LES <span class="red">DÉPENSES PUBLICITAIRES</span><br>EN ÉLAN DE CROISSANCE.</h1>
+<p>ADVIBE est une agence de marketing à la performance pour les marques ambitieuses qui veulent accélérer leur croissance grâce aux publicités sociales, à la stratégie créative et au media buying de précision.</p>
+<div class="hero-buttons"><a href="#contact" class="btn DynamicGlow">Lancer la croissance</a><a href="#results" class="btn btn-outline">Voir nos réalisations</a></div>
+</div>
+<div class="scroll-indicator"><div class="scroll-line"></div></div>
+</section>
+<div class="ticker"><div class="ticker-track"><span>META ADS</span><span>TIKTOK ADS</span><span>GOOGLE ADS</span><span>SNAPCHAT ADS</span><span>YOUTUBE ADS</span><span>CREATIVE STRATEGY</span><span>PERFORMANCE CRO</span><span>INFLUENCER OPS</span><span>META ADS</span><span>TIKTOK ADS</span><span>GOOGLE ADS</span><span>SNAPCHAT ADS</span><span>YOUTUBE ADS</span><span>CREATIVE STRATEGY</span><span>PERFORMANCE CRO</span><span>INFLUENCER OPS</span></div></div>
+<section style="padding:0;"><div class="container" style="padding:0;max-width:100%;width:100%;"><div class="stats">
+<div class="stat"><h3>$200K<span class="red">+</span></h3><p>Budget publicitaire géré</p></div>
+<div class="stat"><h3>320<span class="red">%</span></h3><p>Hausse moyenne du ROAS</p></div>
+<div class="stat"><h3>40<span class="red">+</span></h3><p>Clients accompagnées</p></div>
+<div class="stat"><h3>6</h3><p>Pays actifs</p></div>
+</div></div></section>
+<section id="services"><div class="container">
+<div class="section-tag">Ce que nous faisons</div><h2 class="section-title">CONÇU POUR LA PERFORMANCE<span class="red">.</span></h2>
+<div class="services-grid">
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Publicité sociale payante</h3><p>Meta, TikTok, Snapchat, and LinkedIn campaigns engineered for ROAS. Every dollar optimized.</p></div>
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Media Buying</h3><p>Ciblage précis et allocation stratégique des budgets sur chaque canal pour maximiser votre retour sur investissement.</p></div>
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Stratégie créative</h3><p>Des créations publicitaires percutantes qui convertissent, se développent à grande échelle et renforcent durablement votre marque.</p></div>
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Analyse de performance</h3><p>Attribution précise, analyses hebdomadaires et suivi de croissance pour des décisions éclairées.</p></div>
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Marketing d'influence</h3><p>Des partenariats avec des créateurs conçus pour générer une véritable demande, bien au-delà de la portée et des impressions.</p></div>
+<div class="service"><span class="service-icon" aria-hidden="true">◈</span><h3>Optimisation du funnel</h3><p>Pages d'atterrissage, optimisation du taux de conversion (CRO) et amélioration des offres pour transformer les visiteurs en clients.</p></div>
+</div>
+</div></section>
+<section id="secteurs" style="padding:0;">
+  <div style="padding:100px 0;background:#151515;">
+    <div class="container">
+      <div class="section-tag">Nos secteurs</div>
+      <h2 class="section-title">UNE EXPERTISE DANS PLUSIEURS <span class="red">INDUSTRIES</span><span class="red">.</span></h2>
+      <p style="color:#aaa;font-size:15px;margin-bottom:64px;margin-top:-40px;">Des stratégies adaptées aux réalités et aux objectifs de chaque secteur.</p>
+      <div class="services-grid">
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>          </span>
+          <h3>Santé</h3>
+          <p>Cliniques, médecins et professionnels de santé. Des campagnes qui génèrent des rendez-vous et renforcent la confiance.</p>
         </div>
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M3 9h18"/></svg>
+          </span>
+          <h3>Immobilier</h3>
+          <p>Agences, promoteurs et investisseurs. Génération de leads qualifiés et visibilité ciblée sur les acheteurs sérieux.</p>
+        </div>
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M3 9h18"/></svg>
+          </span>
+          <h3>Construction</h3>
+          <p>Entrepreneurs, architectes et BTP. Acquisition de clients et notoriété locale pour les acteurs du bâtiment.</p>
+        </div>
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </span>
+          <h3>SaaS</h3>
+          <p>Logiciels B2B, startups tech et plateformes. Croissance des abonnements et réduction du coût d'acquisition.</p>
+        </div>
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </span>
+          <h3>Éducation</h3>
+          <p>Écoles, formations en ligne et e-learning. Inscription et conversion d'apprenants à grande échelle.</p>
+        </div>
+        <div class="service">
+          <span class="service-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          <h3>Études à l'étranger</h3>
+          <p>Agences de mobilité internationale. Attraction d'étudiants qualifiés et conversion sur des marchés ciblés.</p>
+        </div>
+      </div>
     </div>
-    <!-- Topbar End -->
+  </div>
+</section>
+<section id="pays" style="background:#151515;border-top:1px solid #262626;">
+<div class="container" style="padding:100px 0;">
+  <div class="section-tag">Présence mondiale</div>
+  <h2 class="section-title">6 PAYS, 1 VIBE<span class="red">.</span></h2>
+  <p style="color:#aaa;font-size:15px;margin-bottom:64px;margin-top:-40px;">Des marques de 6 pays différents nous font confiance pour propulser leur croissance.</p>
 
+  <div class="globe-layout" style="display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;">
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
-           <img src="img/logo.png" alt="Italian Trulli">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 me-n3">
-                <a href="index.html" class="nav-item nav-link active">Accueil</a>
-				<a href="devis.html" class="nav-item nav-link">Devis</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/index1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase">IMMOLEAD MARKETING</h5>
-                            <h1 class="display-1 text-white mb-md-4">ENSEMBLE CONSTRUISONS VOTRE SUCCÈS</h1>
-							<br>
-                            <a href="devis.html" class="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">Devis</a>
-                            <a href="devis.html" class="btn btn-secondary py-md-3 px-md-5 rounded-pill">Contactez Nous</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+    <div style="display:flex;justify-content:center;">
+      <canvas id="globeCanvas" width="480" height="480" style="display:block;cursor:grab;max-width:100%;"></canvas>
     </div>
-    <!-- Carousel End -->
-<a href="tel:+212696676902">
-  <button class="sticky-btn">
-    <i class="fa fa-mobile"></i> Appelez-Nous Maintenant
-  </button>
-</a
 
-    <!-- About Start -->
-    <div class="container-fluid bg-secondary p-0">
-        <div class="row g-0">
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">APERÇU DE <span class="text-primary">NOUS</span></h1>
-                <h4 class="text-primary mb-4">IMMOLEAD est une agence de Marketing Digital</h4>
-				<h4 class="ps-4"><h4 style="text-align: justify;">Spécialisée dans la vente, prospection immobilière et  le media buying (campagnes publicitaires sur Meta, Google, Snapchat et  autres).</h4></h4>
-				<br>
-                <p class="mb-4">Nous allions l’expertise immobilière à la performance digitale pour livrer des résultats mesurables et adaptés à chaque client.</p>
-                <a href="devis.html" class="btn btn-primary py-md-3 px-md-5 rounded-pill">Demandez votre Devis</a>
-            </div>
-            <div class="col-lg-6">
-                <div class="h-100 d-flex flex-column justify-content-center bg-primary p-5">
-                    <div class="d-flex text-white mb-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4" style="width: 60px; height: 60px;">
-                            <i class="fa fa-user-tie fs-4"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h3>L'Engagement</h3>
-                            <p class="mb-0" style="text-align: justify;">Nous donnons le meilleur de nous même et nous sommes engagés à apporter un vrai retour sur investissement et de la valeur tangible à nos clients</p>
-                        </div>
-                    </div>
-                    <div class="d-flex text-white mb-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4" style="width: 60px; height: 60px;">
-                            <i class="fa fa-chart-line fs-4"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h3>La Confiance</h3>
-                            <p class="mb-0" style="text-align: justify;">Nous construisons des relations de confiance Gagnant-Gagnant avec nos partenaires basées sur une écoute permanente et une communication transparente</p>
-                        </div>
-                    </div>
-                    <div class="d-flex text-white">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4" style="width: 60px; height: 60px;">
-                            <i class="fa fa-award fs-4 text-red"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h3>L'Innovation</h3>
-                            <p class="mb-0" style="text-align: justify;">Nous sommes tournés vers l'avenir, avec une pédagogie novatrice et une veille permanente pour faire monter en compétence nos clients sur les dernières tendances en technologies et en Savoir-être</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="display:flex;flex-direction:column;gap:12px;" id="countryList">
+      <div class="country-item" data-lat="31.79" data-lon="-7.09" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Maroc</span>
+        <span style="margin-left:auto;font-size:20px;">🇲🇦</span>
+      </div>
+      <div class="country-item" data-lat="33.89" data-lon="9.54" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Tunisie</span>
+        <span style="margin-left:auto;font-size:20px;">🇹🇳</span>
+      </div>
+      <div class="country-item" data-lat="25.35" data-lon="51.18" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Qatar</span>
+        <span style="margin-left:auto;font-size:20px;">🇶🇦</span>
+      </div>
+      <div class="country-item" data-lat="23.88" data-lon="45.07" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Arabie Saoudite</span>
+        <span style="margin-left:auto;font-size:20px;">🇸🇦</span>
+      </div>
+      <div class="country-item" data-lat="-25.27" data-lon="133.77" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Australie</span>
+        <span style="margin-left:auto;font-size:20px;">🇦🇺</span>
+      </div>
+      <div class="country-item" data-lat="56.13" data-lon="-106.34" style="display:flex;align-items:center;gap:16px;padding:18px 22px;background:#1c1c1c;border:1px solid #262626;border-left:3px solid #ff163d;cursor:pointer;transition:background .25s;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#ff163d;flex-shrink:0;display:inline-block;"></span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;">Canada</span>
+        <span style="margin-left:auto;font-size:20px;">🇨🇦</span>
+      </div>
     </div>
-    <!-- About End -->
-	<div class="container-fluid bg-secondary p-0">
-        <div class="row g-0">
-            <div class="col-lg-6" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/index2.png" style="object-fit: cover;">
-                </div>
-            </div>
-            <div class="col-lg-6 py-6 px-5">
-			<h1 class="display-5 mb-4">IMMOLEAD MARKETING Agency</h1>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i><p style="text-align: justify;">Chez <b>IMMOLEAD</b> , nous utilisons les données pour optimiser chaque aspect de votre marketing numérique. Laissez-nous mesurer, visualiser, analyser et optimiser vos performances.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-secondary p-0">
-    <div class="row g-0">
-        <!-- Text Section -->
-        <div class="col-lg-6 py-6 px-5 order-2 order-lg-1">
-            <h1 class="display-5 mb-4">Tout débute par des résultats de vente exceptionnels!</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <p class="fs-4 fw-normal mb-4">
-                        <i class="fa fa-quote-left text-primary me-3"></i>
-                        <p style="text-align: justify;">&nbsp;La raison d’être de <b>IMMOLEAD</b> est de permettre à ses clients de performer en ligne et ainsi d’avoir un impact positif. Nous avons une approche orientée sur les résultats et aimons collaborer, apprendre et croître avec nos clients. Avec nous, aucun contrat à long terme! Nous misons sur l’obtention de résultats exceptionnels et des partenariats d’affaires sur le long terme avec nos clients.</p>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Section -->
-        <div class="col-lg-6" style="min-height: 500px; order: 1; order-lg-2;">
-            <div class="position-relative h-100">
-                <img class="position-absolute w-100 h-100" src="img/index3.png" style="object-fit: cover;">
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
-    
-    <!-- Services Start -->
-    <div class="container-fluid pt-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 mb-0">POURQUOI LE DIGITAL IMMOBILIER ?</h1>
-            <hr class="w-25 mx-auto bg-primary">
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-laptop fs-4 text-white"></i>
-                    </div>
-                    <h3 class="mb-3">Génération de leads en temps réel</h3>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-chart-pie fa-2x"></i>
-                    </div>
-                    <h3 class="mb-3">Analyse comportementale des acheteurs potentiels</h3>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-chart-line fa-2x"></i>
-                    </div>
-                    <h3 class="mb-3">Optimisation du retour sur investissement publicitaire (ROAS)</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
-    <br>
-	<br>
-	<br>
-	<!-- SECTION 1: IMPACT DE NOS CAMPAGNES -->
-<div class="">
-    <div class="row g-0">
-        <!-- Image (Right on PC, Left on Mobile) -->
-        <div class="col-lg-6" style="min-height: 500px; order: 1; order-lg-2;">
-            <div class="position-relative h-100">
-                <img class="position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww" style="object-fit: cover;">
-            </div>
-        </div>
+<script>
+(function () {
+  const canvas = document.getElementById('globeCanvas');
+  const ctx = canvas.getContext('2d');
 
-        <!-- Text (Left on PC, Right on Mobile) -->
-        <div class="col-lg-6 py-6 px-5 order-2 order-lg-1">
-            <h1 class="display-5 mb-4">IMPACT DE NOS CAMPAGNES</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"style="text-align: justify;"></i>Augmentation de +75% des leads qualifiés</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"style="text-align: justify;"></i>Coût par lead réduit jusqu'à -45%</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"style="text-align: justify;"></i>Amélioration du taux de conversion des formulaires clients</p>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
+  const W = canvas.width, H = canvas.height;
+  const cx = W / 2, cy = H / 2;
+  const R = 210;
+
+  let rotY = 0.4;
+  let isDragging = false;
+  let lastX = 0;
+  let autoSpin = true;
+  let focusLon = null;
+
+  const COUNTRIES = [
+    { lat: 31.79, lon: -7.09 },
+    { lat: 33.89, lon: 9.54 },
+    { lat: 25.35, lon: 51.18 },
+    { lat: 23.88, lon: 45.07 },
+    { lat: -25.27, lon: 133.77 },
+    { lat: 56.13, lon: -106.34 }
+  ];
+
+  let worldGeo = null;
+
+  fetch("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+    .then(res => res.json())
+    .then(data => { worldGeo = data; });
+
+  function toRad(d) { return d * Math.PI / 180; }
+
+  function project(lat, lon) {
+    const phi = toRad(90 - lat);
+    const theta = toRad(lon) + rotY;
+    const x = R * Math.sin(phi) * Math.cos(theta);
+    const y = -R * Math.cos(phi);
+    const z = R * Math.sin(phi) * Math.sin(theta);
+    return { x: cx + x, y: cy + y, z, visible: z > -20 };
+  }
+
+  function drawSphere() {
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.fillStyle = "#1a1a1a";
+    ctx.fill();
+    ctx.strokeStyle = "#2a2a2a";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  function drawGrid() {
+    ctx.strokeStyle = "rgba(255,255,255,0.04)";
+    ctx.lineWidth = 0.6;
+    for (let la = -60; la <= 60; la += 30) {
+      ctx.beginPath();
+      let first = true;
+      for (let lo = -180; lo <= 180; lo += 2) {
+        const p = project(la, lo);
+        if (!p.visible) { first = true; continue; }
+        first ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+        first = false;
+      }
+      ctx.stroke();
+    }
+    for (let lo = -180; lo <= 180; lo += 30) {
+      ctx.beginPath();
+      let first = true;
+      for (let la = -89; la <= 89; la += 2) {
+        const p = project(la, lo);
+        if (!p.visible) { first = true; continue; }
+        first ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+        first = false;
+      }
+      ctx.stroke();
+    }
+  }
+
+  function drawBordersAndContinents() {
+    if (!worldGeo) return;
+    ctx.strokeStyle = "rgba(120,120,120,0.22)";
+    ctx.lineWidth = 0.7;
+    ctx.fillStyle = "rgba(255,255,255,0.015)";
+    worldGeo.features.forEach(feature => {
+      const geom = feature.geometry;
+      const drawPoly = (poly) => {
+        ctx.beginPath();
+        poly.forEach(ring => {
+          ring.forEach(([lon, lat], i) => {
+            const p = project(lat, lon);
+            if (!p.visible) return;
+            if (i === 0) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          });
+        });
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      };
+      if (geom.type === "Polygon") drawPoly(geom.coordinates);
+      if (geom.type === "MultiPolygon") geom.coordinates.forEach(drawPoly);
+    });
+  }
+
+  function drawPoints() {
+    COUNTRIES.forEach(c => {
+      const p = project(c.lat, c.lon);
+      if (!p.visible) return;
+      const depth = (p.z + R) / (2 * R);
+      const alpha = 0.3 + depth * 0.7;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 12, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,22,61,${alpha * 0.18})`;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,22,61,${alpha})`;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    drawSphere();
+    drawBordersAndContinents();
+    drawGrid();
+    drawPoints();
+  }
+
+  function animate() {
+    if (!isDragging && autoSpin) rotY += 0.004;
+    if (!autoSpin && !isDragging && focusLon !== null) {
+      const target = -toRad(focusLon) + Math.PI * 0.3;
+      let diff = target - rotY;
+      const normalized = ((diff % (Math.PI * 2)) + (Math.PI * 2)) % (Math.PI * 2);
+      rotY += (normalized > Math.PI ? normalized - Math.PI * 2 : normalized) * 0.06;
+    }
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  canvas.addEventListener("mousedown", e => { isDragging = true; lastX = e.clientX; autoSpin = false; });
+  canvas.addEventListener("mousemove", e => { if (!isDragging) return; rotY += (e.clientX - lastX) * 0.008; lastX = e.clientX; });
+  window.addEventListener("mouseup", () => isDragging = false);
+  canvas.addEventListener("touchstart", e => { isDragging = true; lastX = e.touches[0].clientX; autoSpin = false; }, { passive: true });
+  canvas.addEventListener("touchmove", e => { if (!isDragging) return; rotY += (e.touches[0].clientX - lastX) * 0.008; lastX = e.touches[0].clientX; }, { passive: true });
+  canvas.addEventListener("touchend", () => isDragging = false);
+
+  document.querySelectorAll('#countryList .country-item').forEach(item => {
+    item.addEventListener("click", function () {
+      autoSpin = false;
+      focusLon = parseFloat(this.dataset.lon);
+    });
+  });
+
+  animate();
+})();
+</script>
+</section>
+<section id="team"><div class="container">
+<div class="section-tag">L'équipe</div><h2 class="section-title">LES PERSONNES DERRIÈRE LA VIBE<span class="red">.</span></h2>
+<div class="team-grid">
+<div class="member"><div class="member-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhM8Bp36tXq3vOh39iYPhdqhdH7vUtAEbdgKlbsomm7W-FeTp19LyN3H2zeChxmdthxiqy8AQc_tbvMzdsAZxWGKah-AIJoqkZ6qHaSSIT0M4soSmGfuLREdiDHw6BSsO-1mPtRWvLg0tgQvoujKu5QPZPHbcVxBD3WwNjubObcQKb0I_HZxfar1KTi5BU/s1254/mouad.png" alt="MOUAD TAHIRI portrait"></div><div class="member-info"><h3>MOUAD TAHIRI</h3><p>Directeur créatif</p></div></div>
+<div class="member"><div class="member-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDMcKjF0IuRxrulh40eazd8Wsu_SQ9Dr0HvCsJ_Ti2SCvW_x1YH7YkXuEfO-LsquyWEFUVHKFdo0FOazPnnHxOX5oMk5F4cHdxdNeh4XcdGQ4gyBPmB22QeCAHl3mdTThLcvK_YcblslZh7lIcQJ07XcLF7o0aHIHU2l7muDoNOuVjt3BnKHcPHUuvq_k/s1448/CEO.png" alt="MEHDI YAICH portrait"></div><div class="member-info"><h3>MEHDI YAICH</h3><p>Responsable Media Buying</p></div></div>
+<div class="member"><div class="member-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQErx3h7YMj9qIi9NgUqsFwfaXiRJBtB7UlWVF-3EE0hLmtF_NOthV5EkBbOAvlE3jkSO-9RlwYOsitJUwsdvs2kZJrkekWLNpbu6lLbtg5RTeszNzt_wcd5hmDg2FSwio2FL778XRPRveqZTcFpZLUOdbd4DN-nSw-jit4wg3fWHlolZsdtDlmdG5y10/s1254/aya.png" alt="AYA MASTOUR portrait"></div><div class="member-info"><h3>AYA MASTOUR</h3><p>Stratège de marque</p></div></div>
+<div class="member"><div class="member-img"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgcvQL6tdQm_n9dRrExwfEIHWbVr2XB_qAg0I4bwFHDn4TFgcEYqUWwL69E4_LE_z34FcfVuZ_OP0GGCvdx24_4F6Sjo0S03XzgsC5VfOlz3BeoAZtWkEO1RWbx8xbN61oXcuOoPMAd-9Fi-vku7dWnhw3I5KynECymJdhXZFpz62vkUanadjy4VYG4ns/s1254/saad.png" alt="YOUNES LAASRI portrait"></div><div class="member-info"><h3>YOUNES LAASRI</h3><p>Lead Designer</p></div></div>
 </div>
-
-<!-- SECTION 2: NOS SERVICES -->
-<div class="">
-    <div class="row g-0">
-        <!-- Text (Left on PC, Right on Mobile) -->
-        <div class="col-lg-6 py-6 px-5 order-2 order-lg-1">
-            <h1 class="display-5 mb-4">NOS SERVICES</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Vente et gestion de portefeuille immobilier</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Prospection digitale géolocalisée</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Campagnes publicitaires (Meta Ads, Google Ads, Snapchat Ads)</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Rédaction et visuels pour annonces immobilières</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Landing pages optimisées pour la conversion</p>
-                    <br>
-                </div>
-            </div>
-        </div>
-
-        <!-- Image (Right on PC, Left on Mobile) -->
-        <div class="col-lg-6" style="min-height: 500px; order: 1; order-lg-2;">
-            <div class="position-relative h-100">
-                <img class="position-absolute w-100 h-100" src="https://www.fullcontent.com/wp-content/uploads/2025/02/Marketing-digital-immobilier.jpg" style="object-fit: cover;">
-            </div>
-        </div>
-    </div>
+</div></section>
+<section id="process" style="background:#202020;"><div class="container">
+<div class="section-tag">Comment nous travaillons</div><h2 class="section-title">TROIS ÉTAPES POUR CHANGER D'ÉCHELLE<span class="red">.</span></h2>
+<div class="process-grid">
+<div class="step"><div class="step-number">01</div><h3>Audit</h3><p>Nous analysons en profondeur votre écosystème marketing actuel, identifions les lacunes et construisons une feuille de route claire pour la croissance.</p></div>
+<div class="step"><div class="step-number">02</div><h3>Construire</h3><p>Campagnes, créations et infrastructure de tracking conçues de zéro pour la performance.</p></div>
+<div class="step"><div class="step-number">03</div><h3>Scaler</h3><p>Optimisation continue, tests et montée en puissance des budgets afin de maximiser vos retours dans le temps.</p></div>
 </div>
-
-<!-- SECTION 3: MÉTHODOLOGIE -->
-<div class="">
-    <div class="row g-0">
-        <!-- Image (Right on PC, Left on Mobile) -->
-        <div class="col-lg-6" style="min-height: 500px; order: 1; order-lg-2;">
-            <div class="position-relative h-100">
-                <img class="position-absolute w-100 h-100" src="https://plus.unsplash.com/premium_photo-1661693870771-dbbd8b95b2b1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" style="object-fit: cover;">
-            </div>
-        </div>
-
-        <!-- Text (Left on PC, Right on Mobile) -->
-        <div class="col-lg-6 py-6 px-5 order-2 order-lg-1">
-            <h1 class="display-5 mb-4">MÉTHODOLOGIE</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Audit des biens et positionnement</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Ciblage et segmentation de l'audience</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Création de campagnes multimédias</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>A/B testing + optimisation continue</p>
-                    <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Reporting analytique & KPI</p>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
+</div></section>
+<section><div class="container">
+<div class="section-tag">Témoignages</div><h2 class="section-title">CE QU'ON DIT DE NOUS<span class="red">.</span></h2>
+<div class="testimonials">
+<div class="testimonial"><p>ADVIBE Digital est une agence très professionnelle et axée sur les résultats. Son approche stratégique et ses décisions fondées sur les données font toute la différence. Excellente communication et exécution impeccable du début à la fin.</p><div class="testimonial-author"><div class="author-avatar">AH</div><div><strong>Abderazzak Hamza</strong><span>Client</span></div></div></div>
+<div class="testimonial"><p>ADVIBE Digital se concentre sur l'essentiel : les résultats. De la stratégie à l'exécution, tout est structuré, basé sur les données et optimisé pour la croissance. Une agence fiable à laquelle vous pouvez faire confiance.</p><div class="testimonial-author"><div class="author-avatar">JK</div><div><strong>Anouar Naim</strong><span>Client</span></div></div></div>
+<div class="testimonial"><p>Une fine équipe jeune, passionnée, réactive et experte qui privilégie plutôt l'accompagnement et le conseil pour tout types de besoins dans le digital. Je recommande 👍</p><div class="testimonial-author"><div class="author-avatar">SM</div><div><strong>Salim Moufakir</strong><span>Client</span></div></div></div>
+<div class="testimonial"><p>L'équipe de ADVIBE fait vraiment la différence. Professionnels, compétents et toujours disponibles.</p><div class="testimonial-author"><div class="author-avatar">RA</div><div><strong>Rania Abouaakil</strong><span>Cliente</span></div></div></div>
+<div class="testimonial"><p>une approche stratégique qui a vraiment aidé notre entreprise à croître en ligne.</p><div class="testimonial-author"><div class="author-avatar">NS</div><div><strong>Nissrine Sefrioui</strong><span>Cliente</span></div></div></div>
+<div class="testimonial"><p>Très impressionné par la réactivité de Advibe. Ils répondent toujours rapidement à nos demandes.</p><div class="testimonial-author"><div class="author-avatar">KM</div><div><strong>Khaled Moukrime</strong><span>Client</span></div></div></div>
 </div>
-
-
-	<div class="container text-center py-5">
-    <h2 class="display-4 mb-4">NOTRE ÉQUIPE</h2>
-    <p class="fs-4 mb-5"style="text-align: justify;">Nous croyons fermement que notre équipe incarne pleinement ce principe. Nos membres viennent d’horizons divers, apportant avec eux des perspectives uniques, des compétences variées et une richesse d’expériences qui enrichissent notre travail au quotidien.</p>
-    <div class="row justify-content-center">
-        <!-- Membre 1 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card rounded-3 shadow-sm">
-                <div class="card-body text-center">
-                    <img src="img/mehdi img.jpg" alt="Mehdi Yaich" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="card-title mb-2">Mehdi Yaich</h4>
-                    <p class="card-text">Analyste publicitaire & reporting</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Membre 2 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card rounded-3 shadow-sm">
-                <div class="card-body text-center">
-                    <img src="img/mouad img.jpg" alt="Mouad Tahiri" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="card-title mb-2">Mouad Tahiri</h4>
-                    <p class="card-text">Stratégie digitale & direction créative</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Membre 3 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card rounded-3 shadow-sm">
-                <div class="card-body text-center">
-                    <img src="img/saad img.jpg" alt="Saad El Falil" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="card-title mb-2">Saad El Falil</h4>
-                    <p class="card-text">Spécialiste immobilier & prospection</p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div></section>
+<section id="faq" style="background:#202020;"><div class="container">
+<div class="section-tag">FAQ</div><h2 class="section-title">DES QUESTIONS<span class="red">?</span></h2>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq1-answer"><span>Quels services proposez-vous ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq1-answer"><div class="faq-answer-inner">Chez Advibe, nous proposons un accompagnement complet en marketing digital pour aider les entreprises à développer leur visibilité et à atteindre leurs objectifs de croissance. Nos services incluent la création de contenus visuels et de créatives publicitaires, le copywriting et la rédaction de textes à fort impact, la gestion des réseaux sociaux, ainsi que la création, le pilotage et l'optimisation de campagnes publicitaires. Nous intervenons également sur le media buying, le scaling des campagnes performantes et l'élaboration de stratégies digitales adaptées à chaque activité.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq2-answer"><span>Sur quelles plateformes lancez-vous des campagnes publicitaires ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq2-answer"><div class="faq-answer-inner">Nous gérons des campagnes publicitaires sur les principales plateformes digitales afin de toucher votre audience là où elle est la plus active. Cela inclut Facebook et Instagram via Meta Ads, Google Ads, TikTok Ads, LinkedIn Ads et YouTube Ads. En fonction de vos objectifs, de votre secteur d'activité et de votre cible, nous pouvons également exploiter d'autres plateformes publicitaires pour maximiser vos résultats et votre retour sur investissement.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq3-answer"><span>Comment optimisez-vous les campagnes publicitaires ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq3-answer"><div class="faq-answer-inner">Nous analysons en continu les performances des campagnes, testons différentes audiences, créatives et messages, puis ajustons les paramètres pour améliorer le retour sur investissement.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq4-answer"><span>Travaillez-vous avec tous les secteurs d'activité ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq4-answer"><div class="faq-answer-inner">Oui. Nous accompagnons les entreprises, marques, commerces, e-commerces, professionnels de services, startups et PME dans différents secteurs.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq5-answer"><span>Quel budget publicitaire est nécessaire pour commencer ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq5-answer"><div class="faq-answer-inner">Le budget dépend de votre secteur, de vos objectifs et de votre marché. Nous vous conseillons sur le budget idéal après une analyse de votre projet.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq6-answer"><span>En combien de temps peut-on voir des résultats ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq6-answer"><div class="faq-answer-inner">Les premiers résultats peuvent apparaître dès les premiers jours pour certaines campagnes. Cependant, une phase d'analyse et d'optimisation est généralement nécessaire pour atteindre les meilleures performances.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq7-answer"><span>Fournissez-vous des rapports de performance ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq7-answer"><div class="faq-answer-inner">Oui. Nous fournissons des rapports réguliers détaillant les résultats, les indicateurs clés et les recommandations d'amélioration.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq8-answer"><span>Travaillez-vous uniquement au Maroc ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq8-answer"><div class="faq-answer-inner">Non. Bien que nous soyons basés au Maroc, nous accompagnons également des clients à l'international.</div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq9-answer"><span>Comment démarrer avec Advibe ?</span><div class="faq-toggle" aria-hidden="true">+</div></button><div class="faq-answer" id="faq9-answer"><div class="faq-answer-inner">Il vous suffit de nous contacter pour un audit ou une consultation gratuite. Nous analyserons vos besoins et proposerons une stratégie adaptée à vos objectifs.</div></div></div>
+</div></section>
+<section class="cta"><div class="container cta-inner"><h2>PRÊT À PASSER À LA VITESSE SUPÉRIEURE ?</h2><p>Parlez-nous de votre entreprise et de vos objectifs, et nous élaborerons un plan de croissance sur mesure sous 48 heures.</p><a href="#contact" class="btn btn-dark DynamicGlow">Parlons-en</a></div></section>
+<section class="contact" id="contact"><div class="container">
+<div class="section-tag">Contact</div><h2 class="section-title">FAISONS GRANDIR VOTRE MARQUE<span class="red">.</span></h2>
+<form id="contactForm">
+<div class="form-grid">
+<div class="input-wrap"><label for="fullName" class="visually-hidden">Nom complet</label><input type="text" id="fullName" placeholder="Nom complet" autocomplete="name" required></div>
+<div class="input-wrap"><label for="emailAddr" class="visually-hidden">Adresse e-mail</label><input type="email" id="emailAddr" placeholder="Adresse e-mail" autocomplete="email" required></div>
+<div class="input-wrap"><label for="compName" class="visually-hidden">Nom de l'entreprise</label><input type="text" id="compName" placeholder="Nom de l'entreprise" autocomplete="organization" required></div>
+<div class="input-wrap"><label for="phoneNum" class="visually-hidden">Numéro de téléphone</label><input type="tel" id="phoneNum" placeholder="Numéro de téléphone" autocomplete="tel"></div>
 </div>
+<div class="input-wrap"><label for="bizGoals" class="visually-hidden">Parlez-nous de votre activité et de vos objectifs</label><textarea id="bizGoals" placeholder="Parlez-nous de votre activité et de vos objectifs" required></textarea></div>
+<button class="btn DynamicGlow" type="submit" style="clip-path:none;width:100%;">Envoyer la demande →</button>
+</form>
+</div></section>
+<footer><div class="container"><div class="footer-inner">
+<div class="footer-logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwvtqBRSirqbb3gL4y1pBEHkAqrxbMAcp1zh1hJ-LCemBz4HfcZ_om-9SdPRQcD49gb_f_uxJDDLmUisoX5ADDuzoIseLxVUPil8_DEflwT_ck4YYLjASCqO8lOuzTsx9kb59ZcUiFBMeUZFLykCiLV1r_CN5Px89XWUGGhuNGI0SKfD_2JiAecNAMYEY/s3972/advibe%20white%20png.png" alt="ADVIBE"></div>
+<div class="footer-links"><a href="#services">Services</a><a href="#results">Réalisations</a><a href="#team">Équipe</a><a href="#process">Méthode</a><a href="#contact">Contact</a></div>
+<div class="footer-copy">© 2026 ADVIBE. Tous droits réservés.</div>
+</div></div></footer>
+<script>
+/* Mobile Drawer Logic */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !isExpanded);
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+    });
+});
 
-    <!-- Features Start -->
-    <div class="container-fluid py-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 mb-0">Ce qui nous différencie</h1>
-            <hr class="w-25 mx-auto bg-primary">
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="fa fa-cubes fs-4 text-white"></i>
-                        </div>
-                        <h3>CRÉATIVITÉ</h3>
-                        <p class="mb-0"style="text-align: justify;">Etre créatif, ce n’est pas un métier, c’est inné. Notre équipe de créatifs aime trouver et mettre en place des solutions pour des projets toujours plus innovants. Nous sommes passionnés par les métiers graphiques et nous prenons énormément de plaisir à créer des visuels modernes, dynamiques, en prenant soin de coller à votre image.</p>
-                    </div>
-                    <div class="col-12">
-                        <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="fa fa-percent fs-4 text-white"></i>
-                        </div>
-                        <h3>100% Taux de réussite</h3>
-                        <p class="mb-0"style="text-align: justify;">Nous sommes curieux et à l’affut des nouvelles tendances.</p>
-                    </div>
-                    <div class="col-12">
-                        <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="fa fa-award fs-4 text-white"></i>
-                        </div>
-                        <h3>QUALITÉ</h3>
-                        <p class="mb-0"style="text-align: justify;">Perfectionnistes dans l’âme, nous pensons que les petits détails feront la différence. Nous passons au peigne fin votre création et nous prenons soin de livrer un travail de qualité quels que soient les délais de réalisations.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="d-block bg-primary h-100 text-center">
-                    <img class="img-fluid" src="img/index4.png" alt="">
-                    <div class="p-4">
-                        <p class="text-white mb-4"style="text-align: justify;">Avec notre approche de marketing digital, nos méthodes continuent de faire leurs preuves sur un marché exigeant, en livrant constamment ce que nous promettons.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="far fa-smile-beam fs-4 text-white"></i>
-                        </div>
-                        <h3>100% Client heureux</h3>
-                        <p class="mb-0"style="text-align: justify;">Nos incroyables clients nous ont permis de réaliser le travail dont nous sommes fiers.</p>
-                    </div>
-                    <div class="col-12">
-                       <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="fa fa-user-tie fs-4 text-white"></i>
-                        </div>
-                        <h3>RÉACTIVITÉ</h3>
-                        <p class="mb-0"style="text-align: justify;">Notre équipe passe très rapidement à l’action. C’est certainement notre plus grande force. Une fois vos idées consommées, nos esprits créatifs passent à l’action afin de respecter vos délais. Nous savons travailler dans l’urgence, mais toujours avec énormément de rigueur et de professionnalisme.</p>
-                    </div>
-                    <div class="col-12">
-                        <center><div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;"><center>
-                            <i class="fa fa-headset fs-4 text-white"></i>
-                        </div>
-                        <h3>24/7 Service client</h3>
-                        <p class="mb-0"style="text-align: justify;">Mieux vous connaître, c’est mieux comprendre vos besoins et vos envies. Constatez l’évolution de votre projet et donnez votre ressenti à une équipe qui sait écouter. C’est ensemble que nous arriverons au but visé.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features Start -->
-	<script type="text/javascript">var submitted=false;</script>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='thank.html';}"></iframe>
-	
+/* Fluid Accordion System */
+document.querySelectorAll('.faq-item').forEach(item => {
+    const questionButton = item.querySelector('.faq-question');
+    const answerContainer = item.querySelector('.faq-answer');
+    questionButton.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        if (!isActive) {
+            item.classList.add('active');
+            questionButton.setAttribute('aria-expanded', 'true');
+            answerContainer.style.maxHeight = answerContainer.scrollHeight + "px";
+        }
+    });
+});
 
+/* Advanced Dynamic Cursor-Tracking Glow FX */
+document.querySelectorAll('.DynamicGlow').forEach(button => {
+    button.addEventListener('mousemove', e => {
+        const bounds = button.getBoundingClientRect();
+        const x = e.clientX - bounds.left;
+        const y = e.clientY - bounds.top;
+        button.style.setProperty('--mouse-x', `${x}px`);
+        button.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
 
-    <!-- Quote Start -->
-    <div class="container-fluid bg-secondary px-0">
-        <div class="row g-0">
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Demandez votre devis</h1>
-				
-                <p class="mb-4"style="text-align: justify;">Vous avez un projet immobilier à promouvoir ou souhaitez booster vos ventes grâce au digital ? N’hésitez pas à nous contacter — notre équipe se fera un plaisir de vous accompagner.</p>
-                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScny-9PJkOFFe4GeNaFOA8OwQ1-35Lt7AXplnQbbKASkYWUnw/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true">
-                    <div class="row gx-3">
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" name="entry.2120924954" class="form-control" id="form-floating-1" placeholder="Nom Complet" required>
-                                <label for="form-floating-1">Nom Complet</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating mb-3">
-                                <input type="email" name="entry.1034576931" class="form-control" id="form-floating-2" placeholder="name@example.com" required>
-                                <label for="form-floating-2">Address Email</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" name="entry.1518137470" class="form-control" id="form-floating-2" placeholder="Téléphone" required>
-                                <label for="form-floating-2">Téléphone</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-primary w-100 h-100" type="submit">Envoyer</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-6" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/quote.jpg" style="object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quote End -->
+/* Automated Slideshow Transition Loop */
+const slides = document.querySelectorAll('.slide');
+let currentSlideIndex = 0;
+function showNextSlide() {
+    slides[currentSlideIndex].classList.remove('active');
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    slides[currentSlideIndex].classList.add('active');
+}
+setInterval(showNextSlide, 5500);
 
+/* Decorative Scroll Boundaries & Navbar Polish */
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    const wrap = document.querySelector('.nav-wrap');
+    if(nav && wrap) {
+        if (window.scrollY > 60) {
+            nav.style.background = 'rgba(10,10,10,.96)';
+            nav.style.borderBottomColor = 'rgba(255,22,61,.25)';
+            wrap.style.height = '76px';
+        } else {
+            nav.style.background = 'rgba(10,10,10,.82)';
+            nav.style.borderBottomColor = 'rgba(255,255,255,.06)';
+            wrap.style.height = '90px';
+        }
+    }
+}, { passive: true });
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-secondary p-5">
-        <div class="row g-5">
-            <div class="col-12 text-center">
-                <h1 class="display-5 mb-4">Restez à jour</h1>
-                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeUwEPb5BHa2p_AjAXUVLeT69XpEu7UmpmtNI8k0ovlIO63og/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true" class="mx-auto" style="max-width: 600px;">
-                    <div class="input-group">
-                        <input type="text" name="entry.429264569" class="form-control border-white p-3" placeholder="Votre Adresse Email">
-                        <button class="btn btn-dark px-4">S'inscrire</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-dark text-secondary p-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <a href="index.html" class="navbar-brand p-0">
-           <img src="img/logo.png" alt="Italian Trulli">
-        </a>
-		<br>
-		<br>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2"style="text-align: justify;" href="#"><i class="text-primary me-2"></i>Agence web & communication digitale, nous accompagnons nos clients à développer leur présence en ligne et à atteindre leurs objectifs de marketing à travers divers canaux numériques. </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Nos services</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Formations</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Google ads</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Pub Facebook</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Pub Instagram</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Pub Tik Tok</a>
-					<a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Site web</a>
-					<a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>SEO</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Bureau</h3>
-                <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Hay Moulay Abdellah N°73 Rue 314, 20480 Ain Chok -  Casablanca </p>
-                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@immolead.com</p>
-                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>(+212) 664 21 18 09</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Suivez-Nous</h3>
-                <div class="d-flex">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Footer End -->
+/* Form Submission */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz1izJSb2FKpsao0MI95FRJqCbfRStxv-reNBuDKDj8clwIjdLBG9GvBtltz3_gh74heg/exec";
 
-
-        
-    </div>
-    <div class="container-fluid bg-dark text-secondary p-5">
-        <div class="row g-5">
-            
-        </a>
-		<br>
-		<br>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                
-            </div>
-            <div class="col-lg-3 col-md-6">
-                
-            </div>
-            <div class="col-lg-3 col-md-6">
-              
-            </div>
-        </div>
-    </div>
-    
-    
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const btn = this.querySelector("button[type=submit]");
+    const originalText = btn.textContent;
+    const payload = {
+      fullName:  document.getElementById("fullName").value.trim(),
+      emailAddr: document.getElementById("emailAddr").value.trim(),
+      compName:  document.getElementById("compName").value.trim(),
+      phoneNum:  document.getElementById("phoneNum").value.trim(),
+      bizGoals:  document.getElementById("bizGoals").value.trim()
+    };
+    btn.textContent = "Envoi en cours…";
+    btn.disabled = true;
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      btn.textContent = "✅ Message envoyé !";
+      this.reset();
+    } catch (err) {
+      btn.textContent = "❌ Erreur, réessayez";
+      console.error(err);
+    }
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 4000);
+});
+</script></body></html>
