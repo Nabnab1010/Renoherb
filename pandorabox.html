@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+  <div id="tiktok-fallback" style="
+      display: none;  
+      position: fixed;
+      top: 0; left: 0;  
+      width: 100vw; height: 100vh;
+      background: white;
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: sans-serif;
+      color: black;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-wrap: break-word;                                                 ">
+
+    <div style="text-align: center; transform: translateY(-100px);">
+      
+      <!-- GIF أصغر بنسبة طفيفة جداً -->
+      <img src="https://www9.0zz0.com/2024/04/06/13/548511907.gif"
+        style="max-width: 110%; margin-left: -19px;" />
+      
+      <!-- النص أصغر بقليل -->
+      <p style="font-size: 20px; margin-top: 15px; color: #333;">
+        Please open this link in Chrome or Safari
+      </p>
+      
+      <p style="font-size: 14px; margin-top: 25px; color: #999;">
+        ✓ Works on Android & iOS
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      
+      // TikTok Detection Script - Compatible with Android & iOS
+      // Works perfectly on both mobile platforms
+      
+      const ua = navigator.userAgent.toLowerCase();
+      const ref = document.referrer.toLowerCase();
+      const fb = document.getElementById('tiktok-fallback');
+      if (!fb) return;
+
+      // TikTok identifiers for both Android and iOS
+      // Android: com.ss.android.ugc.trill
+      // iOS: tiktok, musical_ly, musicallygo
+      const tikTokIdentifiers = [
+        "tiktok",           // iOS & general
+        "musical_ly",       // iOS (older versions)
+        "com.ss.android.ugc.trill", // Android
+        "musicallygo"       // iOS
+      ];
+
+      // Check if user is using TikTok in-app browser
+      // This detection works on both Android and iOS devices
+      const isTikTokBrowser = tikTokIdentifiers.some(id => ua.includes(id)) || ref.includes("tiktok");
+
+      if (isTikTokBrowser) {
+        fb.style.display = 'flex'; // Show fallback for TikTok users
+      } else {
+        fb.style.display = 'none';  // Hide fallback for regular browsers
+      }
+    })();  
+  </script>
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMOV SITE - Download Free Games for Android & iOS</title>
+  <meta name="description" content="Download the best free mobile games for Android and iPhone. Top-rated action, racing, puzzle, RPG games and more at GAMOV SITE.">
+  <meta name="keywords" content="download games, free games, android games, ios games, mobile games">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: #1a1a24;
+      --bg-elevated: #22222f;
+      --fg-primary: #ffffff;
+      --fg-secondary: #e0e0e0;
+      --fg-muted: #a0a0b0;
+      --accent: #2563eb;
+      --accent-light: #3b82f6;
+      --accent-dark: #1d4ed8;
+      --border: #2a2a35;
+      --border-light: #33333f;
+      --gold: #fbbf24;
+      --success: #10b981;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--fg-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    
+    /* Main content wrapper */
+    .main-content {
+      transition: filter 0.3s ease;
+    }
+    
+    /* Blur effect when modal is open - applied only to main content */
+    .main-content.blur {
+      filter: blur(5px);
+      pointer-events: none;
+    }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--fg-muted); }
+
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+    @media(min-width:1024px) { .container { padding: 0 32px; } }
+
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; max-width: 1280px; margin: 0 auto;
+    }
+    @media(min-width:1024px) { .header-inner { padding: 12px 32px; } }
+    .logo { display: flex; align-items: center; gap: 8px; }
+    .logo-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 24px; height: 24px; color: white; }
+    .logo-text { font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.025em; color: var(--fg-primary); }
+    .logo-text span { color: var(--accent); }
+    .nav-links { display: none; gap: 32px; align-items: center; }
+    @media(min-width:768px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--fg-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .icon-btn {
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--fg-muted); transition: all 0.2s;
+    }
+    .icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-elevated); }
+    .icon-btn svg { width: 16px; height: 16px; }
+    .mobile-toggle { display: flex; }
+    @media(min-width:768px) { .mobile-toggle { display: none; } }
+    .mobile-nav {
+      display: none; border-top: 1px solid var(--border);
+      background: var(--bg-secondary); padding: 16px;
+    }
+    .mobile-nav.open { display: flex; flex-direction: column; gap: 16px; }
+    @media(min-width:768px) { .mobile-nav { display: none !important; } }
+    .mobile-nav a { font-size: 14px; font-weight: 500; color: var(--fg-muted); transition: color 0.2s; }
+    .mobile-nav a:hover { color: var(--accent); }
+
+    /* HERO SLIDER - مع الحفاظ على التصميم الداكن */
+    .hero { position: relative; overflow: hidden; margin-top: 64px; }
+    .hero-slides { position: relative; height: 280px; }
+    @media(min-width:640px) { .hero-slides { height: 380px; } }
+    @media(min-width:1024px) { .hero-slides { height: 460px; } }
+    .hero-slide {
+      position: absolute; inset: 0; transition: opacity 0.7s;
+    }
+    .hero-slide.active { opacity: 1; z-index: 1; }
+    .hero-slide:not(.active) { opacity: 0; z-index: 0; }
+    .hero-slide img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      object-position: center;
+      display: block;
+    }
+    /* Dark overlay for better text visibility - خفيف جداً */
+    .hero-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,10,15,0.2) 0%, rgba(17,17,24,0.1) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: absolute; bottom: 32px; left: 0; right: 0; padding: 0 16px;
+      z-index: 2;
+    }
+    @media(min-width:640px) { .hero-content { bottom: 48px; } }
+    @media(min-width:1024px) { .hero-content { bottom: 56px; padding: 0 32px; } }
+    .hero-content-inner { max-width: 1280px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block; margin-bottom: 8px; border-radius: 999px;
+      background: var(--accent); padding: 4px 12px;
+      font-size: 12px; font-weight: 600; color: white;
+    }
+    .hero-title {
+      font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700;
+      color: white; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    @media(min-width:640px) { .hero-title { font-size: 36px; } }
+    @media(min-width:1024px) { .hero-title { font-size: 48px; } }
+    .hero-subtitle { 
+      max-width: 400px; 
+      font-size: 14px; 
+      color: rgba(255,255,255,0.9); 
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+    @media(min-width:640px) { .hero-subtitle { font-size: 16px; } }
+    .slider-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--bg-elevated);
+      color: var(--fg-muted);
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+      z-index: 3;
+    }
+    .slider-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); }
+    .slider-btn svg { width: 20px; height: 20px; }
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+    .slider-dots {
+      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 3;
+    }
+    .slider-dot {
+      height: 8px; border-radius: 999px; transition: all 0.3s; background: rgba(255,255,255,0.3);
+      width: 8px; cursor: pointer;
+    }
+    .slider-dot.active { width: 32px; background: var(--accent); }
+
+    /* STATS */
+    .stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-secondary); }
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      max-width: 1280px; margin: 0 auto; padding: 32px 16px;
+    }
+    @media(min-width:1024px) { .stats-grid { grid-template-columns: repeat(4,1fr); padding: 32px 32px; } }
+    .stat-item { display: flex; align-items: center; gap: 12px; }
+    .stat-icon {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: var(--bg-elevated);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .stat-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .stat-value { font-size: 18px; font-weight: 700; color: var(--fg-primary); }
+    .stat-label { font-size: 12px; color: var(--fg-muted); }
+
+    /* GAMES SECTION */
+    .games-section { max-width: 1280px; margin: 0 auto; padding: 40px 16px; }
+    @media(min-width:1024px) { .games-section { padding: 40px 32px; } }
+    .section-title {
+      font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 700;
+      color: var(--fg-primary); margin-bottom: 24px;
+    }
+    @media(min-width:640px) { .section-title { font-size: 24px; } }
+    .section-title span { color: var(--accent); }
+    .games-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    @media(min-width:640px) { .games-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media(min-width:768px) { .games-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    /* GAME CARD - Dark Theme */
+    .game-card {
+      position: relative; overflow: hidden; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      transition: all 0.3s; cursor: pointer; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .game-card:hover { 
+      border-color: var(--accent); 
+      box-shadow: 0 12px 30px rgba(37,99,235,0.15);
+      transform: translateY(-4px);
+    }
+    /* ===================================================== */
+    /* اللون تمت إزالته بالكامل عند النقر - no active color  */
+    /* ===================================================== */
+    .game-card:active {
+      border-color: var(--border);  /* يبقى نفس لون الحدود العادي */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: none;
+    }
+    .game-card-img {
+      position: relative; padding-top: 100%; overflow: hidden;
+      background: var(--bg-elevated);
+    }
+    .game-card-img img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+      opacity: 0.9;
+    }
+    .game-card:hover .game-card-img img { transform: scale(1.1); }
+    .game-card-info { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .game-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--fg-primary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+      min-height: 40px;
+    }
+    .star-rating { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+    .star-rating svg { width: 12px; height: 12px; }
+    .star-rating .filled { color: var(--gold); fill: var(--gold); }
+    .star-rating .empty { color: var(--border); fill: var(--border); }
+    .star-rating .half { color: var(--gold); fill: rgba(251,191,36,0.5); }
+    .star-rating .rating-num { margin-left: 4px; font-size: 12px; color: var(--fg-muted); font-weight: 500; }
+    .game-card-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--fg-muted); }
+
+    /* MODAL - بدون أي صور غلاف */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      align-items: center; justify-content: center; padding: 16px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.98); /* تعتيم قوي جداً */
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+    }
+    .modal {
+      position: relative; width: 100%; max-width: 420px;
+      border-radius: 24px;
+      background: var(--bg-secondary);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      z-index: 10000; /* أعلى قيمة ممكنة */
+      border: 1px solid var(--accent);
+      padding-top: 50px;
+      /* إزالة أي تأثيرات خارجية */
+      isolation: isolate;
+    }
+    .modal-close {
+      position: absolute; right: 16px; top: 16px; z-index: 10001; /* أعلى من modal */
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--bg-elevated);
+      color: var(--fg-muted);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+    .modal-close:hover { 
+      background: var(--accent); 
+      color: white; 
+      transform: scale(1.1);
+      border-color: var(--accent);
+    }
+    .modal-close svg { width: 18px; height: 18px; }
+    
+    /* Game Info Card - بدون أي مسافة علوية */
+    .modal-game-info-card {
+      background: var(--bg-secondary);
+      padding: 0 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .modal-game-info {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    
+    .modal-game-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      border: 2px solid var(--accent);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+      background: var(--bg-elevated);
+    }
+    
+    .modal-game-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .modal-game-details {
+      flex: 1;
+    }
+    
+    .modal-game-name { 
+      font-size: 20px; 
+      font-weight: 700; 
+      color: var(--fg-primary);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    
+    .modal-rating-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    
+    .modal-game-rating .rating-num { 
+      font-size: 14px; 
+      color: var(--fg-muted); 
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    
+    .modal-game-meta { 
+      font-size: 13px; 
+      color: var(--fg-muted);
+      font-weight: 500;
+    }
+    
+    /* Steps Container */
+    .modal-steps {
+      padding: 24px 24px 24px;
+      background: var(--bg-secondary);
+    }
+    
+    /* Step: Choose */
+    .choose-title { 
+      text-align: center; 
+      font-size: 15px; 
+      font-weight: 600; 
+      color: var(--fg-primary); 
+      margin-bottom: 20px;
+    }
+    
+    .platform-btns { 
+      display: flex; 
+      gap: 12px; 
+    }
+    
+    .platform-btn {
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 10px;
+      border-radius: 16px; 
+      border: 1px solid var(--border); 
+      background: var(--bg-card);
+      padding: 18px 12px; 
+      transition: all 0.2s;
+    }
+    
+    .platform-btn:hover { 
+      border-color: var(--accent); 
+      background: var(--bg-elevated);
+      transform: translateY(-2px);
+    }
+    
+    .platform-btn.android:hover { border-color: #3ddc84; }
+    .platform-btn.ios:hover { border-color: var(--fg-primary); }
+    
+    .platform-btn svg { 
+      width: 44px; 
+      height: 44px; 
+    }
+    
+    .platform-btn.android svg { color: #3ddc84; }
+    .platform-btn.ios svg { color: var(--fg-primary); }
+    
+    .platform-btn .plat-name { 
+      font-size: 15px; 
+      font-weight: 700; 
+      color: var(--fg-primary); 
+    }
+    
+    .platform-btn .plat-sub { 
+      font-size: 11px; 
+      color: var(--fg-muted); 
+    }
+
+    /* Step: Preparing */
+    .preparing { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px; 
+      padding: 16px 0; 
+    }
+    
+    .spinner-wrap {
+      position: relative; 
+      width: 70px; 
+      height: 70px;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+    }
+    
+    .spinner-ring {
+      position: absolute; 
+      inset: 0; 
+      border-radius: 50%;
+      border: 3px solid var(--bg-elevated); 
+      border-top-color: var(--accent);
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .spinner-wrap svg { 
+      width: 32px; 
+      height: 32px; 
+      color: var(--accent); 
+    }
+    
+    .preparing-text { 
+      font-size: 15px; 
+      font-weight: 500; 
+      color: var(--fg-primary); 
+      text-align: center;
+    }
+    
+    .progress-bar { 
+      width: 100%; 
+      height: 12px; 
+      background: var(--bg-elevated); 
+      border-radius: 999px; 
+      overflow: hidden; 
+    }
+    
+    .progress-fill { 
+      height: 100%; 
+      background: var(--accent); 
+      border-radius: 999px; 
+      transition: width 0.15s; 
+    }
+    
+    .progress-text { 
+      font-size: 13px; 
+      color: var(--fg-muted); 
+      text-align: center; 
+      margin-top: 10px; 
+    }
+
+    /* Step: Ready */
+    .ready { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px; 
+      padding: 16px 0; 
+    }
+    
+    .check-circle {
+      width: 70px; 
+      height: 70px; 
+      border-radius: 50%;
+      background: var(--bg-elevated);
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+    }
+    
+    .check-circle svg { 
+      width: 36px; 
+      height: 36px; 
+      color: var(--success); 
+    }
+    
+    .ready-text { 
+      font-size: 16px; 
+      font-weight: 600; 
+      color: var(--fg-primary); 
+    }
+    
+    .download-btn {
+      width: 100%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 10px;
+      border-radius: 12px; 
+      background: var(--accent); 
+      padding: 14px;
+      font-size: 15px; 
+      font-weight: 700; 
+      color: white; 
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    
+    .download-btn:hover { 
+      background: var(--accent-light); 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(37,99,235,0.3); 
+    }
+    
+    .download-btn svg { 
+      width: 22px; 
+      height: 22px; 
+    }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--border); background: var(--bg-secondary); }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto; padding: 40px 16px;
+    }
+    @media(min-width:1024px) { .footer-inner { padding: 40px 32px; } }
+    .footer-grid { display: grid; gap: 32px; }
+    @media(min-width:768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+    .footer-about p { margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--fg-muted); }
+    .footer-col h4 { font-size: 14px; font-weight: 600; color: var(--fg-primary); margin-bottom: 12px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { font-size: 14px; color: var(--fg-muted); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);
+      text-align: center; font-size: 14px; color: var(--fg-muted);
+    }
+    .footer-bottom span { font-weight: 600; color: var(--accent); }
+
+    .step-hidden { display: none; }
+  </style>
+<link rel="me" href="https://draft.blogger.com/profile/09700877937154566766" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+<body>
+  <!-- Main content wrapper - this will be blurred when modal is open -->
+  <div class="main-content" id="mainContent">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+          </div>
+          <span class="logo-text">BOW<span>ZA</span>.SITE</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#games">Top Games</a>
+          <a href="#new">New Releases</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" aria-label="Search" id="searchButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button class="icon-btn mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav">
+        <a href="#">Home</a>
+        <a href="#games">Top Games</a>
+        <a href="#new">New Releases</a>
+      </nav>
+    </header>
+
+    <!-- HERO SLIDER - معاد مع التصميم الداكن -->
+    <section class="hero">
+      <div class="hero-slides" id="heroSlides">
+        <!-- Slides injected by JS -->
+      </div>
+      <button class="slider-btn prev" id="sliderPrev" aria-label="Previous slide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="slider-btn next" id="sliderNext" aria-label="Next slide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          </div>
+          <div><p class="stat-value">10M+</p><p class="stat-label">Total Downloads</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <div><p class="stat-value">14</p><p class="stat-label">Games Available</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </div>
+          <div><p class="stat-value">100%</p><p class="stat-label">Safe &amp; Verified</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div><p class="stat-value">4.8</p><p class="stat-label">Average Rating</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES GRID -->
+    <section class="games-section" id="games">
+      <h2 class="section-title font-orbitron">Top <span>Games</span></h2>
+      <div class="games-grid" id="gamesGrid">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="logo">
+              <div class="logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+              </div>
+              <span class="logo-text">BOW<span>ZA</span>.SITE</span>
+            </div>
+            <p>Your ultimate destination for downloading the best mobile games for Android and iOS devices.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#games">Top Games</a></li>
+              <li><a href="#">New Releases</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">RPG</a></li>
+              <li><a href="#">Racing</a></li>
+              <li><a href="#">Puzzle</a></li>
+              <li><a href="#">Strategy</a></li>
+              <li><a href="#">Sports</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">DMCA</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          All rights reserved &copy; 2026 <span>BOWZA.SITE</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- DOWNLOAD MODAL - بدون أي صور غلاف -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      
+      <!-- Game Info Card - بدون أي مسافة علوية -->
+      <div class="modal-game-info-card">
+        <div class="modal-game-info">
+          <div class="modal-game-thumb">
+            <img id="modalThumb" src="" alt="">
+          </div>
+          <div class="modal-game-details">
+            <div class="modal-game-name" id="modalName"></div>
+            <div class="modal-rating-container">
+              <div class="modal-game-rating">
+                <div class="star-rating" id="modalStars"></div>
+              </div>
+              <span class="rating-num" id="modalRating"></span>
+            </div>
+            <div class="modal-game-meta" id="modalMeta"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Steps Container -->
+      <div class="modal-steps">
+        <!-- Step: Choose -->
+        <div id="stepChoose">
+          <p class="choose-title">Choose your platform</p>
+          <div class="platform-btns">
+            <button class="platform-btn android" id="chooseAndroid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576.6 672" fill="currentColor"><path d="M302.3 4.5c-5.7 3.2-9.2 9.3-9.2 15.8v97.1C218.7 128 152 166 113.5 224.5L63.8 137.7c-5-8.7-16-11.7-24.7-6.7-8.7 5-11.7 16-6.7 24.7l52.8 92.1c-22 34-34.7 74-34.7 117.2h476c0-43.2-12.7-83.2-34.7-117.2l52.8-92.1c5-8.7 2-19.7-6.7-24.7-8.7-5-19.7-2-24.7 6.7l-49.7 86.8C425 166 358.3 128 284 117.4V20.3c0-11.1-9-20.1-20.1-20.1-1.2 0-2.4.1-3.5.3h-.1l8.1 4.5-.1-.5zM170 287c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm236.6 0c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zM20.3 339c-11.2 0-20.3 9.1-20.3 20.3v183.4c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3V359.3c0-11.2-9.1-20.3-20.3-20.3H20.3zm515.7 0c-11.2 0-20.3 9.1-20.3 20.3v183.4c0 11.2 9.1 20.3 20.3 20.3H556c11.2 0 20.3-9.1 20.3-20.3V359.3c0-11.2-9.1-20.3-20.3-20.3H536zM90.7 399v173c0 25.1 20.3 45.4 45.4 45.4h30.6v74c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3v-74h30.7V671.7c0 .1 0 .2.1.3h61V617.4h30.6v74c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3v-74h30.6c25.1 0 45.4-20.3 45.4-45.4V399H90.7z"/></svg>
+              <span class="plat-name">Android</span>
+              <span class="plat-sub">Android/ APK</span>
+            </button>
+            <button class="platform-btn ios" id="chooseIos">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span class="plat-name">iPhone</span>
+              <span class="plat-sub">iOS Version</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step: Preparing -->
+        <div id="stepPreparing" class="step-hidden">
+          <div class="preparing">
+            <div class="spinner-wrap">
+              <div class="spinner-ring"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <p class="preparing-text" id="preparingText"></p>
+            <div style="width:100%">
+              <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+              <p class="progress-text" id="progressText">0% - Verifying compatibility...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step: Ready -->
+        <div id="stepReady" class="step-hidden">
+          <div class="ready">
+            <div class="check-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <p class="ready-text">Ready to download!</p>
+            <a href="#" class="download-btn" id="downloadBtn">
+              <span id="downloadIcon"></span>
+              <span id="downloadText"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============ DATA ============
+    var games = [
+      { 
+        id:"Spider-Man: Mobile Adventure", 
+        title:"Spider-Man: Mobile Adventure", 
+        rating:4.8, 
+        downloads:"1M+", 
+        size:"821 MB", 
+        image:"https://i.postimg.cc/SR8B0V3F/C784xe-OFo2w-Vi-Cf4m5bxgoe-H.jpg"
+      },
+      { 
+        id:"GTA V: Mobile Edition", 
+        title:"GTA V: Mobile Edition", 
+        rating:4.6, 
+        downloads:"2M+", 
+        size:"785 MB", 
+        image:"https://i.postimg.cc/SKD1HHKp/9a77db0d3793bb8c4170658776d948c8.jpg"
+      },
+      { 
+        id:"NARUTO: Ultimate Ninja Mobile", 
+        title:"NARUTO: Ultimate Ninja Mobile", 
+        rating:4.5, 
+        downloads:"900k+", 
+        size:"850 MB", 
+        image:"https://i.postimg.cc/QtMN3Lkf/unnamed-2.png"
+      },
+     {
+  id: "fart together mobile  ",
+  title: "fart together mobile ",
+  rating: 4.6,
+  downloads: "1.1M+",
+  size: "550 MB",
+  image: "https://i.postimg.cc/2j2nQtgn/file-00000000939481f4b641a492b1a1c58d.png"
+},
+      
+      { 
+        id:"Meccha Chameleon Mobile", 
+        title:"Meccha Chameleon Mobile", 
+        rating:4.7, 
+        downloads:"300k+", 
+        size:" 82 MB", 
+        image:"https://i.postimg.cc/gjVWXCLw/unnamed-(7).png"
+      },
+      { 
+        id:"Gta San Andeas Mobile", 
+        title:"Gta San Andeas Mobile", 
+        rating:4.5, 
+        downloads:"2.2M+", 
+        size:"1.3 GB", 
+        image:"https://i.postimg.cc/ZRxxSQJP/images.png"
+      },
+      { 
+        id:"Gta 6 Mobile", 
+        title:"Gta 6 Mobile", 
+        rating:4.6, 
+        downloads:"250k+", 
+        size:"497 MB", 
+        image:"https://i.postimg.cc/bvQvVcRC/Grand-Theft-Auto-VI-logo-(with-gradient)-svg.webp"
+      },
+      {
+  id: "Snow Runner Mobile ",
+  title: "Snow Runner Mobile",
+  rating: 4.7,
+  downloads: "1.1M+",
+  size: "850 MB",
+  image: "https://i.postimg.cc/1RjJJnZP/10042025-9ea4150ca57244068421faecdbc3215b.jpg"
+},
+{
+  id: "Minecraft: Dream it, Build it Mobile",
+  title: "Minecraft: Dream it, Build it Mobile",
+  rating: 4.6,
+  downloads: "2.5M+",
+  size: "819 MB",
+  image: "https://i.postimg.cc/Bb4LCCQT/unnamed.png"
+},
+      {
+  id: "Pubg Mobile 2018",
+  title: "Pubg Mobile 2018",
+  rating: 4.7,
+  downloads: "1.2M+",
+  size: "950 MB",
+  image: "https://i.postimg.cc/cHgWVQwJ/images-(1)-(3).jpg"
+},
+{
+  id: "Assetto Corsa Mobile",
+  title: "Assetto Corsa Mobile",
+  rating: 4.6,
+  downloads: "2.5M+",
+  size: "819 MB",
+  image: "https://i.postimg.cc/q777S4Xw/NMc-Aucy-ANMn-YMNkz6V5vk9f5YXty2m-Cz.jpg"
+},
+      { 
+        id:"Forza Horizon 5 Mobile", 
+        title:"Forza Horizon 5 Mobile", 
+        rating:4.4, 
+        downloads:"1.2M+", 
+        size:"1.3 GB", 
+        image:"https://i.postimg.cc/nrvPSrj2/small-FH-5-Evergreen-Key-Art-Horizontal-9600x5400-RGB-2-adfcd010d0.jpg"
+      },
+      { 
+        id:"Demon Slayer: the Hinokami chronicles", 
+        title:"Demon Slayer: the Hinokami chronicles", 
+        rating:4.6, 
+        downloads:"250k+", 
+        size:"497 MB", 
+        image:"https://i.postimg.cc/SNgrSchW/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2-png.jpg"
+      },
+      
+      { 
+        id:"Red Dead Redemption Mobile", 
+        title:"Red Dead Redemption Mobile", 
+        rating:4.5, 
+        downloads:"1M+", 
+        size:"900 MB", 
+        image:"https://i.postimg.cc/7ZSptB7w/IMG-20251204-133343.png"
+      },
+      { 
+        id:"Mimic Party Mobile", 
+        title:"Mimic Party Mobile", 
+        rating:4.7, 
+        downloads:"1M+", 
+        size:"650 MB", 
+        image:"https://i.postimg.cc/1RcXtXGB/images-1a07c9ad432.jpg"
+      },
+      { 
+        id:"EA SPORTS FC 27 MOBILE", 
+        title:"EA SPORTS FC 27 MOBILE", 
+        rating:4.4, 
+        downloads:"670K+", 
+        size:"867 MB", 
+        image:"https://i.postimg.cc/VvWRLf7Y/file-00000000386081f494eafd1479499c4a.png"
+      },
+      { 
+        id:"Euro Truck Simulator 2 Mobile", 
+        title:"Euro Truck Simulator 2 Mobile", 
+        rating:4.8, 
+        downloads:"1M+", 
+        size:"1.3 GB", 
+        image:"https://i.postimg.cc/sx6hr9h9/342-3426321-euro-truck-simulator-2-logo-png-euro-truck.png"
+      },
+      // New Game 1
+      { 
+        id:"PUBG MOBILE LIGHT", 
+        title:"PUBG MOBILE LIGHT", 
+        rating:4.8, 
+        downloads:"500k+", 
+        size:"980 MB", 
+        image:"https://i.postimg.cc/gjWCy8H1/unnamed-(1).jpg"
+      },
+      // New Game 2
+      { 
+        id:"Poppy Playtime 5 Mobile", 
+        title:"Poppy Playtime 5 Mobile", 
+        rating:4.6, 
+        downloads:"300k+", 
+        size:"890 MB", 
+        image:"https://i.postimg.cc/5ttL32JV/IMG-20260315-001903.png"
+      },
+      {
+    id: "DragonBall Sparking zero : Mobile",
+    title: "DragonBall Sparking zero",
+    rating: 4.7,
+    downloads: "1.2M+",
+    size: "950 MB",
+    image: "https://i.postimg.cc/rsfRLc3K/IMG-20260811-WA0055.jpg"
+  },
+  {
+    id: "PES Mobile 2021",
+    title: "PES Mobile 2021",
+    rating: 4.6,
+    downloads: "2.5M+",
+    size: "819 MB",
+    image: "https://i.postimg.cc/x1prN7Vr/efootball-pes-2021.jpg"
+  },
+    {
+  id: "Free Fire 2018",
+  title: "Free Fire 2018",
+  rating: 4.7,
+  downloads: "1.2M+",
+  size: "950 MB",
+  image: "https://i.postimg.cc/prMZp6WN/R.png"
+},
+{
+  id: "Free Fire 2022",
+  title: "Free Fire 2022",
+  rating: 4.6,
+  downloads: "2.5M+",
+  size: "819 MB",
+  image: "https://i.postimg.cc/9M3sV1qN/a2db79df81e1cbd2c0f15ad6adf6e616.jpg"
+},
+      { 
+        id:"Rust Mobile", 
+        title:"Rust Mobile", 
+        rating:4.3, 
+        downloads:"950k+", 
+        size:"612 MB", 
+        image:"https://i.postimg.cc/G3GmfkwK/images.jpg"
+      },
+      { 
+        id:"BeamNG.Drive Mobile", 
+        title:"BeamNG.Drive Mobile", 
+        rating:4.9, 
+        downloads:"600k+", 
+        size:"1GB", 
+        image:"https://i.postimg.cc/NjNPzWFt/Beam-NGicon.webp"
+      },
+
+    ];
+
+    var heroSlides = [
+      { image:"https://i.postimg.cc/xdC3N89B/marvels-spider-man-2-game-cover.webp", title:"Spider-Man: Mobile", subtitle:"Leap through rooftops, save the city" },
+      { image:"https://i.postimg.cc/FKRVkz99/naruto-path-of-the-ninja-2-game-cover-altar-of-gaming(1).jpg", title:"NARUTO: Ultimate Ninja", subtitle:"Unleash ninja powers, master the fight" },
+      { image:"https://i.postimg.cc/1zpYM4kt/AA1Esib6.jpg", title:"Top games", subtitle:"Discover the best mobile games here" }
+    ];
+
+    // ============ SVG TEMPLATES ============
+    var starSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+
+    var androidSvgSmall = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 576.6 672" fill="currentColor"><path d="M302.3 4.5c-5.7 3.2-9.2 9.3-9.2 15.8v97.1C218.7 128 152 166 113.5 224.5L63.8 137.7c-5-8.7-16-11.7-24.7-6.7-8.7 5-11.7 16-6.7 24.7l52.8 92.1c-22 34-34.7 74-34.7 117.2h476c0-43.2-12.7-83.2-34.7-117.2l52.8-92.1c5-8.7 2-19.7-6.7-24.7-8.7-5-19.7-2-24.7 6.7l-49.7 86.8C425 166 358.3 128 284 117.4V20.3c0-11.1-9-20.1-20.1-20.1-1.2 0-2.4.1-3.5.3h-.1l8.1 4.5-.1-.5zM170 287c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm236.6 0c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zM20.3 339c-11.2 0-20.3 9.1-20.3 20.3v183.4c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3V359.3c0-11.2-9.1-20.3-20.3-20.3H20.3zm515.7 0c-11.2 0-20.3 9.1-20.3 20.3v183.4c0 11.2 9.1 20.3 20.3 20.3H556c11.2 0 20.3-9.1 20.3-20.3V359.3c0-11.2-9.1-20.3-20.3-20.3H536zM90.7 399v173c0 25.1 20.3 45.4 45.4 45.4h30.6v74c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3v-74h30.7V671.7c0 .1 0 .2.1.3h61V617.4h30.6v74c0 11.2 9.1 20.3 20.3 20.3h20.3c11.2 0 20.3-9.1 20.3-20.3v-74h30.6c25.1 0 45.4-20.3 45.4-45.4V399H90.7z"/></svg>';
+
+    var appleSvgSmall = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>';
+
+    function makeStars(rating) {
+      var html = '';
+      for (var i = 0; i < 5; i++) {
+        if (i < Math.floor(rating)) html += '<span class="filled">' + starSvg + '</span>';
+        else if (i < rating) html += '<span class="half">' + starSvg + '</span>';
+        else html += '<span class="empty">' + starSvg + '</span>';
+      }
+      return html;
+    }
+
+    // ============ HERO SLIDER ============
+    var currentSlide = 0;
+    var slidesEl = document.getElementById('heroSlides');
+    var dotsEl = document.getElementById('sliderDots');
+
+    function renderSlides() {
+      slidesEl.innerHTML = '';
+      dotsEl.innerHTML = '';
+      heroSlides.forEach(function(slide, i) {
+        var div = document.createElement('div');
+        div.className = 'hero-slide' + (i === currentSlide ? ' active' : '');
+        div.innerHTML = '<img src="' + slide.image + '" alt="' + slide.title + '">' +
+          '<div class="hero-content"><div class="hero-content-inner">' +
+          '<span class="hero-badge">FEATURED</span>' +
+          '<h2 class="hero-title font-orbitron">' + slide.title + '</h2>' +
+          '<p class="hero-subtitle">' + slide.subtitle + '</p>' +
+          '</div></div>';
+        slidesEl.appendChild(div);
+
+        var dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === currentSlide ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = function() { currentSlide = i; updateSlider(); };
+        dotsEl.appendChild(dot);
+      });
+    }
+
+    function updateSlider() {
+      var slides = slidesEl.querySelectorAll('.hero-slide');
+      var dots = dotsEl.querySelectorAll('.slider-dot');
+      slides.forEach(function(s, i) {
+        s.classList.toggle('active', i === currentSlide);
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    renderSlides();
+    document.getElementById('sliderNext').onclick = function() {
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      updateSlider();
+    };
+    document.getElementById('sliderPrev').onclick = function() {
+      currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+      updateSlider();
+    };
+    setInterval(function() {
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      updateSlider();
+    }, 5000);
+
+    // ============ MOBILE MENU ============
+    document.getElementById('menuToggle').onclick = function() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    };
+
+    // ============ SEARCH BUTTON - معطل تماماً ============
+    document.getElementById('searchButton').onclick = function() {
+      // زر البحث لا يفعل شيئاً - معطل تماماً
+      return false;
+    };
+
+    // ============ GAMES GRID ============
+    var gamesGrid = document.getElementById('gamesGrid');
+    games.forEach(function(game) {
+      var card = document.createElement('div');
+      card.className = 'game-card';
+      card.onclick = function() { openModal(game); };
+      card.innerHTML = '<div class="game-card-img"><img src="' + game.image + '" alt="' + game.title + '"></div>' +
+        '<div class="game-card-info">' +
+        '<div class="game-card-title">' + game.title + '</div>' +
+        '<div class="star-rating">' + makeStars(game.rating) + '<span class="rating-num">' + game.rating + '</span></div>' +
+        '<div class="game-card-meta"><span>' + game.downloads + ' downloads</span><span>' + game.size + '</span></div>' +
+        '</div>';
+      gamesGrid.appendChild(card);
+    });
+
+    // ============ MODAL ============
+    var modalOverlay = document.getElementById('modalOverlay');
+    var mainContent = document.getElementById('mainContent');
+    var selectedGame = null;
+    var selectedPlatform = null;
+    var progressInterval = null;
+
+    function openModal(game) {
+      selectedGame = game;
+      selectedPlatform = null;
+      
+      // Add blur to main content only
+      mainContent.classList.add('blur');
+      
+      document.getElementById('modalThumb').src = game.image;
+      document.getElementById('modalThumb').alt = game.title;
+      document.getElementById('modalName').textContent = game.title;
+      document.getElementById('modalStars').innerHTML = makeStars(game.rating);
+      document.getElementById('modalRating').textContent = game.rating;
+      document.getElementById('modalMeta').textContent = game.downloads + ' downloads | ' + game.size;
+
+      // Reset the download link
+      var downloadBtn = document.getElementById('downloadBtn');
+      downloadBtn.href = "#";
+
+      showStep('choose');
+      modalOverlay.classList.add('open');
+    }
+
+    function closeModal() {
+      // Remove blur from main content
+      mainContent.classList.remove('blur');
+      
+      modalOverlay.classList.remove('open');
+      if (progressInterval) clearInterval(progressInterval);
+    }
+
+    function showStep(step) {
+      document.getElementById('stepChoose').classList.toggle('step-hidden', step !== 'choose');
+      document.getElementById('stepPreparing').classList.toggle('step-hidden', step !== 'preparing');
+      document.getElementById('stepReady').classList.toggle('step-hidden', step !== 'ready');
+    }
+
+    document.getElementById('modalClose').onclick = closeModal;
+    document.getElementById('modalBackdrop').onclick = closeModal;
+
+    // Platform selection
+    document.getElementById('chooseAndroid').onclick = function() { 
+      startPreparing('android'); 
+    };
+    
+    document.getElementById('chooseIos').onclick = function() { 
+      startPreparing('ios'); 
+    };
+
+    function startPreparing(platform) {
+      selectedPlatform = platform;
+      var label = platform === 'android' ? 'Android' : 'iPhone';
+      document.getElementById('preparingText').textContent = 'Preparing ' + selectedGame.title + ' for ' + label + '...';
+      document.getElementById('progressFill').style.width = '0%';
+      document.getElementById('progressText').textContent = '0% - Verifying compatibility...';
+      showStep('preparing');
+
+      var progress = 0;
+      if (progressInterval) clearInterval(progressInterval);
+      progressInterval = setInterval(function() {
+        progress += Math.random() * 8 + 2;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(progressInterval);
+          setTimeout(function() { showReady(); }, 300);
+        }
+        document.getElementById('progressFill').style.width = Math.min(Math.round(progress), 100) + '%';
+        document.getElementById('progressText').textContent = Math.min(Math.round(progress), 100) + '% - Verifying compatibility...';
+      }, 150);
+    }
+
+    function showReady() {
+      var label = selectedPlatform === 'android' ? 'Android' : 'iPhone';
+      var icon = selectedPlatform === 'android' ? androidSvgSmall : appleSvgSmall;
+      var downloadBtn = document.getElementById('downloadBtn');
+      
+      // Update button text and icon
+      document.getElementById('downloadIcon').innerHTML = icon;
+      document.getElementById('downloadText').textContent = 'Download for ' + label;
+
+      // عرض اللوكر الجديد بدلاً من الرابط المباشر
+      downloadBtn.onclick = function(e) {
+        e.preventDefault();
+        showNewLocker();
+      };
+
+      showStep('ready');
+    }
+
+    // ============ NEW LOCKER (أسود مع برتقالي نيون) - مع صورة اللعبة المختارة ============
+    function showNewLocker() {
+      // إنشاء iframe لعرض اللوكر بمعزل عن الصفحة
+      const iframe = document.createElement('iframe');
+      iframe.style.position = 'fixed';
+      iframe.style.top = '0';
+      iframe.style.left = '0';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = 'none';
+      iframe.style.zIndex = '10000';
+      iframe.style.backgroundColor = 'black';
+      
+      // الحصول على صورة اللعبة المختارة
+      const gameImage = selectedGame ? selectedGame.image : 'https://i.ibb.co/d0PpcvBp/unnamed.webp';
+      
+      // محتوى الـ iframe - نفس كود اللوكر الأسود مع إضافة صورة اللعبة المختارة
+      const iframeContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Download Portal | GAMOV SITE</title>
+        <style>
+          *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
+          }
+          body{
+            background:#000000;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+            color:#ffffff;
+          }
+          .locker-card{
+            background:#111111;
+            border-radius:28px;
+            padding:28px;
+            max-width:420px;
+            width:100%;
+            border:1px solid #2563eb;
+            box-shadow:0 0 25px #2563eb33, 0 20px 40px rgba(255,255,255,0.05);
+          }
+          .game-icon{
+            width:110px;
+            height:110px;
+            border-radius:22px;
+            display:block;
+            margin:auto;
+            border:3px solid #2563eb;
+            box-shadow:0 0 20px #2563eb88;
+            margin-bottom:20px;
+          }
+          .main-text{
+            text-align:center;
+            font-size:18px;
+            line-height:1.5;
+            margin-bottom:18px;
+            color:#ffffff;
+          }
+          .highlight{
+            color:#2563eb;
+            font-weight:700;
+          }
+          .offer{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            background:#222222;
+            border-radius:18px;
+            padding:16px;
+            margin-bottom:12px;
+            border:1px solid #444444;
+            transition:.25s;
+          }
+          .offer:hover{
+            background:#2b2b2b;
+            border-color:#2563eb;
+          }
+          .offer-text{
+            font-size:14px;
+            color:#ffffff;
+            font-weight:700;
+          }
+          .offer-btn{
+            background:#2563eb;
+            color:#000000;
+            font-weight:700;
+            font-size:10px;
+            padding:5px 12px;
+            border-radius:30px;
+            box-shadow:0 0 8px #2563eb88;
+            text-decoration:none;
+          }
+          .users{
+            margin-top:18px;
+            text-align:center;
+            color:#aaaaaa;
+            font-size:14px;
+          }
+          .dot{
+            width:8px;
+            height:8px;
+            background:#ffffff;
+            border-radius:50%;
+            display:inline-block;
+            margin-right:6px;
+            box-shadow:0 0 10px rgba(255,255,255,0.4);
+          }
+        </style>
+      </head>
+      <body>
+        <div class="locker-card">
+          <img class="game-icon" src="${gameImage}">
+          <div class="main-text">
+            <b>Last Step! 🎉</b><br>
+            Complete <span class="highlight">1 Offer</span> below to start downloading automatically!
+          </div>
+          <div id="offers"></div>
+          <div class="users">
+            <span class="dot"></span>
+            BOWZA.SITE
+          </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><\/script>
+        <script>
+          $(function(){
+            var numOffers = 2;
+            var apiURL = "https://d2dzcaq3bhqk1m.cloudfront.net/public/offers/feed.php?user_id=704420&api_key=7974f8ccb7549f108d6d03c87ac159d7&s1=&s2=&callback=?";
+            $.getJSON(apiURL, function(offers){
+              var html='';
+              offers = offers.splice(0,numOffers);
+              $.each(offers,function(key,offer){
+                html += \`
+                <div class="offer">
+                  <div class="offer-text">\${offer.anchor}</div>
+                  <a href="\${offer.url}" target="_blank" class="offer-btn">OPEN</a>
+                </div>
+                \`;
+              });
+              $("#offers").html(html);
+            });
+          });
+        <\/script>
+      </body>
+      </html>
+      `;
+      
+      // كتابة المحتوى داخل الـ iframe
+      iframe.srcdoc = iframeContent;
+      
+      // إضافة زر إغلاق خارجي
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '×';
+      closeBtn.style.position = 'fixed';
+      closeBtn.style.top = '20px';
+      closeBtn.style.right = '20px';
+      closeBtn.style.zIndex = '10001';
+      closeBtn.style.width = '40px';
+      closeBtn.style.height = '40px';
+      closeBtn.style.borderRadius = '50%';
+      closeBtn.style.background = '#2563eb';
+      closeBtn.style.color = 'white';
+      closeBtn.style.border = 'none';
+      closeBtn.style.fontSize = '24px';
+      closeBtn.style.cursor = 'pointer';
+      closeBtn.style.boxShadow = '0 0 20px #2563eb88';
+      
+      closeBtn.onclick = function() {
+        iframe.remove();
+        closeBtn.remove();
+      };
+      
+      document.body.appendChild(iframe);
+      document.body.appendChild(closeBtn);
+    }
+  </script>
+</body>
+</html>
